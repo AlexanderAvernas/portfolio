@@ -1,0 +1,77 @@
+@import url('https://fonts.googleapis.com/css2?family=Poppins:ital,wght@0,300;0,400;0,500;0,600;0,700;1,500;1,600;1,800&display=swap');
+
+* {
+    font-family: poppins;
+    box-sizing: border-box;
+}
+
+body {
+    margin: 0;
+}
+
+.navbar-container {
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    align-items: left;
+    padding: 1rem;
+    background-color: #f2f2f2;
+  }
+
+  .nav-menu {
+    display: none;
+    list-style: none;
+    margin: 0;
+    padding: 0;
+  }
+
+  .nav-menu-item {
+    margin-left: 0.1rem;
+    margin-top: 0.2rem;
+  }
+
+  .nav-link-item {
+    color: black;
+    font-size: larger;
+    font-weight: bold;
+    text-decoration: none;
+    /* font-family: poppins; */
+
+  }
+
+  .hamburger-menu {
+    display: none;
+  }
+
+  @media (max-width: 768px) {
+    .hamburger-menu {
+      display: block;
+      cursor: pointer;
+    }
+
+    .nav-menu.open {
+      display: block;
+    }
+
+    .nav-menu.open li {
+      display: block;
+    }
+
+    .nav-menu.open li a {
+      display: block;
+    }
+
+  }
+
+  @media (min-width: 769px) {
+    .nav-menu {
+      display: flex !important;
+      display: flex;
+      justify-content: space-between;
+      margin: 0 10rem;
+    }
+
+    .hamburger-menu {
+      display: none;
+    }
+  }
