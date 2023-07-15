@@ -75,3 +75,16 @@ body {
       display: none;
     }
   }
+  .prodjectHeader {
+    margin-left: 0.5rem;
+    margin-top: 2rem;
+  }
+
+  .prodjectProgress {
+    padding-top: 2rem;
+    margin-left: 2rem;
+  }
+
+  .prodjectLoading {
+    margin-left: 2rem;
+  }
