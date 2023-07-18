@@ -1,11 +1,11 @@
-import styles from '../styles/Home.module.css'
+import AboutSw from '@/components/AboutSw'
 
 function About() {
-  return (
-    <div className={styles.main}>
-        <h1>About</h1>
-    </div>
-  )
+    return (
+        <>
+            <AboutSw />
+        </>
+    )
 }
 
 export default About
