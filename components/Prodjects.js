@@ -1,22 +1,35 @@
-import React from 'react'
-import styled from 'styled-components'
+import React from 'react';
+import { motion } from 'framer-motion';
+import { useInView } from 'react-intersection-observer';
+import styled from 'styled-components';
 
 function Prodjects(props) {
+  const { ref, inView } = useInView({
+    triggerOnce: true, // The animation will trigger only once when the component comes into view
+    threshold: 0.2, // Percentage of the component visible to trigger the animation
+  });
+
   return (
-    <ProjectContainer>
+    <motion.div
+      ref={ref}
+      initial={{ opacity: 0, x: 100 }}
+      animate={{ opacity: inView ? 1 : 0, x: inView ? 0 : 100 }} // Change opacity and x position based on inView
+      transition={{ duration: 0.75 }}
+    >
+      <ProjectContainer>
         <ProjectTextContainer>
-            <ProdjectInfo>{props.info}</ProdjectInfo>
-            <ProjectLink>{props.link}</ProjectLink>
+          <ProdjectInfo>{props.info}</ProdjectInfo>
+          <ProjectLink href={props.link}>{props.link}</ProjectLink>
         </ProjectTextContainer>
         <ProjectImageContainer>
-            <ImageProdject src={props.image} alt="JavaScript prodject"/>
+          <ImageProdject src={props.image} alt="JavaScript project" />
         </ProjectImageContainer>
-
-    </ProjectContainer>
-  )
+      </ProjectContainer>
+    </motion.div>
+  );
 }
 
-export default Prodjects
+export default Prodjects;
 
 const ProjectContainer = styled.div`
 display: flex;

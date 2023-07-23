@@ -17,7 +17,7 @@ export default Hero
 
 const HeroContainer = styled.div `
 background-color: black;
-height: 50vh;
+height: 60vh;
 display: flex;
 align-items: center;
 justify-content: center;
@@ -39,7 +39,7 @@ font-size: 3.5rem;
 margin-bottom: 0;
 `
 const Secondheader = styled.h2`
-color: green;
+color: #24BCA3;
 font-size: 2rem;
 margin-bottom: 0;
 `

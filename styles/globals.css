@@ -14,7 +14,7 @@ body {
     flex-direction: column;
     justify-content: space-between;
     align-items: left;
-    padding: 1rem;
+    padding: 1.2rem 1rem;
     background-color: #f2f2f2;
   }
 
@@ -80,6 +80,7 @@ body {
     margin-top: 2rem;
   }
 
+
   .prodjectProgress {
     padding-top: 2rem;
     margin-left: 2rem;
@@ -102,6 +103,10 @@ body {
         text-decoration: underline;
     }
 
+  }
+
+  .ProjectInfocontainer {
+    overflow: hidden;
   }
 
 /* Footer */

@@ -6,6 +6,7 @@ export default function Home() {
         <>
             <Hero />
             <h1 className='prodjectHeader'>Prodjects</h1>
+            <div className='ProjectInfocontainer'>
             <Prodjects
             image="images/Vue.png"
             info="Project with Vue vite single page application"
@@ -14,6 +15,7 @@ export default function Home() {
             image="images/JS.png"
             info="Project using vanilla JavaScript, HTML and CSS"
             link="https://alexanderavernas.github.io/Js-Adventure-gh/"/>
+            </div>
             <h4 className='prodjectProgress'>More project in progress</h4>
             <p className='prodjectLoading'>Loading...</p>
         </>
