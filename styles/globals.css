@@ -34,9 +34,14 @@ body {
     color: black;
     font-size: larger;
     font-weight: bold;
-    text-decoration: none;
-    /* font-family: poppins; */
+    text-decoration: underline;
+    text-decoration-thickness: 2.5px;
+    text-underline-offset: 4px;
+    line-height: 2;
+  }
 
+  .nav-link-item:hover {
+    color: #24BCA3;
   }
 
   .hamburger-menu {

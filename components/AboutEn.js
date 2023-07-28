@@ -3,27 +3,27 @@ import { motion } from 'framer-motion'
 import styled from 'styled-components'
 import Link from 'next/link'
 
-function AboutSw() {
+function AboutEn() {
     return (
         <AboutContainer>
             <AboutHeader>About Me</AboutHeader>
             <AboutInfoContainer>
                 <AboutText>
-                    Hej! Jag heter Alexander, är 35 år och är en blivande
-                    frontendutvecklare. Jag har alltid haft ett driv till att
-                    skapa och lösa problem. Som person är jag målinriktad,
-                    kreativ och strukturerad. Jag trivs med utmaningar för att
-                    lära mig nya saker och gillar att arbeta både enskilt och i
-                    team. Jag är väldigt intresserad och tycker det är kul att
-                    skapa användarvänliga, snygga och responsiva webbplatser.
+                    Hello! My name is Alexander, I'm 35 years old and I'm an
+                    aspiring frontend developer. I have always had a drive to
+                    create and solve problems. As a person, I'm goal-oriented,
+                    creative and structured. I enjoy challenges to learn new
+                    things and I like to work both independently and in teams.
+                    I'm very interested and I find it fun to create
+                    user-friendly, good-looking and responsive websites.
                     <br />
                     <br />
-                    Se mitt CV för mer information och erfarenheter.
+                    See my resumé for more information and experience.
                     <br />
-                    <SweButton>SV</SweButton>
-                    <Link href="about/en">
-                        <EnButton>EN</EnButton>
+                    <Link href="/about">
+                        <SweButton>SV</SweButton>
                     </Link>
+                    <EnButton>EN</EnButton>
                 </AboutText>
                 <motion.div
                     initial={{ opacity: 0, y: -10 }}
@@ -31,7 +31,7 @@ function AboutSw() {
                     exit={{ opacity: 0, y: 10 }}
                     transition={{ duration: 1.5 }}
                 >
-                    <AboutImage src="images/NyCv.JPG" />
+                    <AboutImage src="../images/NyCv.JPG" />
                 </motion.div>
             </AboutInfoContainer>
             <CvContainer>
@@ -41,7 +41,7 @@ function AboutSw() {
     )
 }
 
-export default AboutSw
+export default AboutEn
 
 const AboutContainer = styled.div``
 

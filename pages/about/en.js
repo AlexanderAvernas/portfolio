@@ -1,9 +1,9 @@
-import React from 'react'
+import AboutEn from '@/components/AboutEn'
 
 function en() {
   return (
     <div>
-        <h1>English about</h1>
+        <AboutEn/>
     </div>
   )
 }
