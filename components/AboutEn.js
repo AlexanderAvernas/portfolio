@@ -81,7 +81,11 @@ const SweButton = styled.button`
     margin: 2rem 0.6rem;
 `
 
-const EnButton = styled.button``
+const EnButton = styled.button`
+color: white;
+background-color: black;
+`
+
 const CvContainer = styled.div`
     display: flex;
     justify-content: center;

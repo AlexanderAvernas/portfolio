@@ -79,6 +79,8 @@ const AboutText = styled.p`
 
 const SweButton = styled.button`
     margin: 2rem 0.6rem;
+    color: white;
+    background-color: black;
 `
 
 const EnButton = styled.button``
