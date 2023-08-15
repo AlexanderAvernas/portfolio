@@ -92,13 +92,14 @@ body {
 
   .prodjectHeader {
     margin-left: 0.5rem;
-    margin-top: 2rem;
+    margin-top: 1rem;
     font-size: 3rem;
     font-weight: 600;
 
     @media (min-width: 769px) {
         padding-right: 3rem;
-        padding-top: 3rem;
+        padding-top: 4.5rem;
+        border-right: 3px solid black;
         /* margin-left: 4rem;
         margin-right: 4rem;
         margin-top: 4rem; */

@@ -14,16 +14,16 @@ export default function Home() {
         <>
             <Hero />
             <div className='projectContainer'>
-            <h1 className='prodjectHeader'>Prodjects</h1>
+            <h1 className='prodjectHeader'>Projects</h1>
             <div className='ProjectInfocontainer'>
             <Prodjects
             image="images/Vue.png"
             info="Project with Vue vite single page application"
-            link="https://alexanderavernas.github.io/Skate-vue-gh/"/>
+            link=""/>
             <Prodjects
             image="images/JS.png"
             info="Project using vanilla JavaScript, HTML and CSS"
-            link="https://alexanderavernas.github.io/Js-Adventure-gh/"/>
+            link=""/>
             <motion.div
             ref={ref}
             initial={{ opacity: 0, x: 100 }}
