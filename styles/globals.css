@@ -30,12 +30,16 @@ body {
     margin-top: 0.2rem;
   }
 
+  .nav-menu-item.active .nav-link-item {
+    text-decoration: underline;
+  }
+
   .nav-link-item {
     color: black;
     font-size: larger;
     font-weight: bold;
-    text-decoration: underline;
-    text-decoration-thickness: 2.5px;
+    text-decoration: none;
+    /* text-decoration-thickness: 2.5px; */
     text-underline-offset: 4px;
     line-height: 2;
   }

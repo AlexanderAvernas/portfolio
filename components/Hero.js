@@ -16,7 +16,7 @@ function Hero() {
 export default Hero
 
 const HeroContainer = styled.div `
-background-color: black;
+background-color: grey;
 height: 60vh;
 display: flex;
 align-items: center;
