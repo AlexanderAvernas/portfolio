@@ -14,8 +14,12 @@ body {
     flex-direction: column;
     justify-content: space-between;
     align-items: left;
-    padding: 1.2rem 1rem;
+    padding: 1rem 1rem;
     background-color: #f2f2f2;
+
+    @media (min-width: 768px)  {
+        padding: 0.3rem 0.5rem;
+    }
   }
 
   .nav-menu {
@@ -36,8 +40,8 @@ body {
 
   .nav-link-item {
     color: black;
-    font-size: larger;
-    font-weight: bold;
+    font-size: large;
+    font-weight: 600;
     text-decoration: none;
     /* text-decoration-thickness: 2.5px; */
     text-underline-offset: 4px;
