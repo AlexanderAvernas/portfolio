@@ -1,4 +1,5 @@
 import Hero from '@/components/Hero'
+import HeroNew from '@/components/HeroNew';
 import Prodjects from '@/components/Prodjects'
 import { motion } from 'framer-motion';
 import { useInView } from 'react-intersection-observer';
@@ -13,6 +14,7 @@ export default function Home() {
     return (
         <>
             <Hero />
+            {/* <HeroNew/> */}
             <div className='projectContainer'>
             <h1 className='prodjectHeader'>Projects</h1>
             <div className='ProjectInfocontainer'>
