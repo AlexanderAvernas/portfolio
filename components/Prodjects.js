@@ -19,10 +19,25 @@ function Prodjects(props) {
             <ProjectContainer>
                 <ProjectTextContainer>
                     <ProdjectInfo>{props.info}</ProdjectInfo>
-                    <ProjectLink href={props.link}>{props.link}</ProjectLink>
+                    <SkillContainer>
+                    {props.skills.map((skill, index) => (
+                            <Skill key={index}>{skill}</Skill>
+                        ))}
+                    </SkillContainer>
+                    <ProjectLink>{props.link}</ProjectLink>
                 </ProjectTextContainer>
                 <ProjectImageContainer>
-                    <ImageProdject src={props.image} alt="JavaScript project" />
+                    <a
+                        href={props.projectLink}
+                        target="_blank"
+                        rel="noopener noreferrer"
+                    >
+                        <ImageProdject
+                            href={props.projectLink}
+                            src={props.image}
+                            alt="JavaScript project"
+                        />
+                    </a>
                 </ProjectImageContainer>
             </ProjectContainer>
         </motion.div>
@@ -56,10 +71,33 @@ const ProjectImageContainer = styled.div`
 
 const ProdjectInfo = styled.h4``
 
-const ProjectLink = styled.a``
+const SkillContainer = styled.div `
+display: flex;
+margin-top: 0.8rem;
+`
+
+const Skill = styled.p`
+border: 1px solid black;
+padding: 0.3rem 0.5rem;
+border-radius: 1rem;
+font-size: small;
+margin-right: 0.5rem;
+background-color: grey;
+color: white;
+`
+
+const ProjectLink = styled.p``
 
 const ImageProdject = styled.img`
-    width: 10rem;
+    width: 15rem;
     margin-top: 0.5rem;
-    border: 1.5px solid black;
+    border: 0px solid black;
+    transition: transform 0.3s ease;
+    box-shadow: 0px 0px 10px rgba(0, 0, 0, 0.9);
+
+    /* Add hover effect */
+    &:hover {
+        transform: scale(1.05); /* Makes the image slightly bigger */
+         /* Adds a shadow on hover */
+    }
 `

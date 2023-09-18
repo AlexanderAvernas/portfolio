@@ -55,7 +55,7 @@ const BigContainer = styled.div`
 `
 
 const HeroContainer = styled.div`
-    background-color: black;
+    background-color: lightseagreen;
     height: 55vh;
     display: flex;
     align-items: center;
@@ -90,7 +90,7 @@ const Thirdheader = styled.h4`
 const HeaderContainer = styled.div``
 
 const HeroRightContainer = styled.div`
-    background-color: rgba(210, 146, 255);
+    background-color: lightsalmon;
     height: 35vh;
     display: flex;
     justify-content: center;
@@ -123,7 +123,7 @@ const HeroImage = styled.img`
     border-radius: 50%;
 
     @media (min-width: 769px) {
-        width: 12rem;
+        width: 10rem;
         right: 10.2vw;
         top: -1rem;
     }
