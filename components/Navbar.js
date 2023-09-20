@@ -5,10 +5,19 @@ import { useRouter } from 'next/router'
 
 const Navbar = () => {
     const [isMenuOpen, setIsMenuOpen] = useState(false)
+    const [isScrolled, setIsScrolled] = useState(false)
     const router = useRouter()
 
     const handleMenuToggle = () => {
         setIsMenuOpen(!isMenuOpen)
+    }
+
+    const handleScroll = () => {
+        if (window.scrollY > 0) {
+            setIsScrolled(true)
+        } else {
+            setIsScrolled(false)
+        }
     }
 
     useEffect(() => {
@@ -23,14 +32,19 @@ const Navbar = () => {
         handleResize() // Initialize menu state on component mount
 
         window.addEventListener('resize', handleResize)
+        window.addEventListener('scroll', handleScroll) // Add scroll event listener
+
 
         return () => {
             window.removeEventListener('resize', handleResize)
+            window.removeEventListener('scroll', handleScroll)
         }
     }, [])
 
+    const navbarClass = isScrolled ? 'navbar-container scrolled' : 'navbar-container'
+
     return (
-        <nav className="navbar-container">
+        <nav className={navbarClass}>
             <div className="hamburger-menu" onClick={handleMenuToggle}>
                 <svg
                     xmlns="http://www.w3.org/2000/svg"

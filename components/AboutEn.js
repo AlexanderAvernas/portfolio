@@ -43,7 +43,9 @@ function AboutEn() {
 
 export default AboutEn
 
-const AboutContainer = styled.div``
+const AboutContainer = styled.div`
+padding-top: 3rem;
+`
 
 const AboutHeader = styled.h1`
     font-size: 3rem;

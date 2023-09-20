@@ -55,7 +55,7 @@ const BigContainer = styled.div`
 `
 
 const HeroContainer = styled.div`
-    background-color: lightseagreen;
+    background-color: #06043E;
     height: 55vh;
     display: flex;
     align-items: center;
@@ -90,7 +90,7 @@ const Thirdheader = styled.h4`
 const HeaderContainer = styled.div``
 
 const HeroRightContainer = styled.div`
-    background-color: lightsalmon;
+    background-color: #DBE1E7;
     height: 35vh;
     display: flex;
     justify-content: center;

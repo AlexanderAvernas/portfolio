@@ -9,18 +9,48 @@ body {
     margin: 0;
 }
 
+.navbar-wrapper {
+    position: sticky;
+    top: 0;
+    z-index: 100;
+}
+
+/* Add a margin to the content to prevent it from being overlapped by the navbar */
+.content {
+    margin-top: -60px; /* Adjust the value as needed */
+  }
+
+/* Add a background color to the content to prevent it from showing through the navbar */
+.content::before {
+    content: "";
+    position: absolute;
+    top: -60px; /* Should match the margin-top value for .content */
+    left: 0;
+    width: 100%;
+    height: 100px; /* Should match the margin-top value for .content */
+    background-color: white; /* Background color of the content area */
+    z-index: -1;
+  }
+
+
 .navbar-container {
     display: flex;
     flex-direction: column;
     justify-content: space-between;
     align-items: left;
     padding: 1rem 1rem;
-    background-color: #f2f2f2;
+    background-color: transparent;
+    z-index: 2;
 
     @media (min-width: 768px)  {
         padding: 0.3rem 0.5rem;
     }
   }
+
+  .scrolled {
+    background-color: #DBE1E7; /* Change background color when scrolled */
+    transition: background-color 0.3s ease; /* Add a smooth transition effect */
+}
 
   .nav-menu {
     display: none;

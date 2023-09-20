@@ -43,7 +43,9 @@ function AboutSw() {
 
 export default AboutSw
 
-const AboutContainer = styled.div``
+const AboutContainer = styled.div`
+padding-top: 3rem;
+`
 
 const AboutHeader = styled.h1`
     font-size: 3rem;
@@ -51,6 +53,7 @@ const AboutHeader = styled.h1`
     margin: 1.5rem;
 
     @media (min-width: 769px) {
+
     }
 `
 
