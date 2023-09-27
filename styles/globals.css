@@ -49,7 +49,7 @@ body {
 
   .scrolled {
     background-color: #DBE1E7; /* Change background color when scrolled */
-    transition: background-color 0.3s ease; /* Add a smooth transition effect */
+    transition: background-color 0.5s ease; /* Add a smooth transition effect */
 }
 
   .nav-menu {

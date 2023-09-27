@@ -21,10 +21,10 @@ function Hero() {
                             Frontend <br /> Developer
                         </Header>
                         <Secondheader>Frontend-develepor</Secondheader>
-                        <Thirdheader>
+                        {/* <Thirdheader>
                             Student at IT-högskolan <br />
                             Stockholm
-                        </Thirdheader>
+                        </Thirdheader> */}
                     </HeaderContainer>
                 </motion.div>
             </HeroContainer>
@@ -55,7 +55,7 @@ const BigContainer = styled.div`
 `
 
 const HeroContainer = styled.div`
-    background-color: #06043E;
+    background-color: #2C3E50;
     height: 55vh;
     display: flex;
     align-items: center;
@@ -90,7 +90,7 @@ const Thirdheader = styled.h4`
 const HeaderContainer = styled.div``
 
 const HeroRightContainer = styled.div`
-    background-color: #DBE1E7;
+    background-color: #333333;
     height: 35vh;
     display: flex;
     justify-content: center;
@@ -123,7 +123,7 @@ const HeroImage = styled.img`
     border-radius: 50%;
 
     @media (min-width: 769px) {
-        width: 10rem;
+        width: 12rem;
         right: 10.2vw;
         top: -1rem;
     }

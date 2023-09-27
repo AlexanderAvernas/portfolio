@@ -18,7 +18,7 @@ export default function Home() {
                 <h1 className="prodjectHeader">Projects</h1>
                 <div className="ProjectInfocontainer">
                     <Prodjects
-                        image="images/Vue.png"
+                        image="images/VueSmall.png"
                         info="Skate-shop"
                         skills={["Vue", "Figma", "CSS"]}
                         link="Project made with Vue. My first project with Vue where I made the design in Figma. Made it as a project in school"
@@ -30,6 +30,14 @@ export default function Home() {
                         skills={["JavaScript", "CSS", "API"]}
                         link="Made with vanilla JavaScript and wheater API. First Project working with API. Made during a course in school."
                         projectLink="https://alexanderavernas.github.io/Js-Adventure-gh/"
+                    />
+
+<Prodjects
+                        image="images/ReactSeries.png"
+                        info="Series"
+                        skills={["React", "CSS", "API"]}
+                        link="Project made with React and API. First React Project as a project in school"
+                        projectLink="https://rad-kataifi-792c7a.netlify.app/"
                     />
 
                     <motion.div
