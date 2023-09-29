@@ -9,7 +9,9 @@ function Layout({ children }) {
             <Navbar />
             </div>
             <div className="content">{children}</div>
-            <Footer />
+            <section id="contact">
+            <Footer/>
+            </section>
         </div>
     )
 }

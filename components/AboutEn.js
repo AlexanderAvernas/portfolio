@@ -44,7 +44,11 @@ function AboutEn() {
 export default AboutEn
 
 const AboutContainer = styled.div`
-padding-top: 3rem;
+margin-top: 5rem;
+
+@media (min-width: 769px) {
+       margin-top: 9rem;
+    }
 `
 
 const AboutHeader = styled.h1`
@@ -53,6 +57,8 @@ const AboutHeader = styled.h1`
     margin: 1.5rem;
 
     @media (min-width: 769px) {
+        margin-left: 9rem;
+        margin-bottom: -3rem;
     }
 `
 
@@ -102,7 +108,7 @@ const CvButton = styled.button`
 
 const AboutImage = styled.img`
     width: 90vw;
-    border: 1px solid black;
+    box-shadow: 0px 0px 10px rgba(0, 0, 0, 0.9);
 
     @media (min-width: 769px) {
         width: 25vw;

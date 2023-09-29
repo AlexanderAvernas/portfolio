@@ -20,7 +20,7 @@ function Hero() {
                         <Header>
                             Frontend <br /> Developer
                         </Header>
-                        <Secondheader>Frontend-develepor</Secondheader>
+                        <Secondheader>Alexander Avernäs</Secondheader>
                         {/* <Thirdheader>
                             Student at IT-högskolan <br />
                             Stockholm
@@ -35,10 +35,15 @@ function Hero() {
                         alt="Profile imgage"
                     />
                     {/* <ImgHeader>Alexander Avernäs</ImgHeader> */}
-                    <ButtonContainer>
-                        <AboutButton>About me</AboutButton>
-                        <ContactButton>Contact</ContactButton>
-                    </ButtonContainer>
+                    <motion.div
+                   ref={ref}
+                   initial={{ opacity: 0, x: 100 }} // Startposition till vänster
+                   animate={{ opacity: inView ? 1 : 0, x: inView ? 0 : -100 }} // Ändra x för att flytta texten
+                   transition={{ duration: 0.75 }}>
+                    <ProjectScrollContainer>
+                        <ScrollText>Scroll down for projects</ScrollText>
+                    </ProjectScrollContainer>
+                    </motion.div>
                 </ImgContainer>
             </HeroRightContainer>
         </BigContainer>
@@ -76,6 +81,10 @@ const Header = styled.h1`
     margin-bottom: 0;
     overflow: hidden; // Dölj texten som inte ryms i elementet
     white-space: nowrap; // Förhindra att texten bryts över flera rader
+
+    @media (min-width: 769px) {
+        font-size: 4rem;
+    }
 `
 const Secondheader = styled.h2`
     color: #24bca3;
@@ -139,42 +148,27 @@ const ImgHeader = styled.h2`
     }
 `
 
-const ButtonContainer = styled.div`
+const ProjectScrollContainer = styled.div`
     display: flex;
     justify-content: center;
     align-items: center;
     margin-top: 2rem;
 
     @media (min-width: 769px) {
-        margin-left: -8rem;
-        margin-right: 3rem;
-        margin-top: 7rem;
+        margin-left: 5rem;
+        margin-right: 0rem;
+        margin-top: 34rem;
     }
 `
 
-const AboutButton = styled.button`
+const ScrollText = styled.h5`
     padding: 0.5rem;
-    border-radius: 0.5rem;
     width: 40vw;
     margin-right: 0.5rem;
-    background-color: black;
+    margin-top: 1rem;
     color: white;
     font-weight: 500;
-
-    @media (min-width: 769px) {
-        width: 12vw;
-        padding: 0.75rem 0rem;
-    }
-`
-
-const ContactButton = styled.button`
-    padding: 0.5rem;
-    border-radius: 0.5rem;
-    width: 40vw;
-    margin-left: 0.5rem;
-    background-color: black;
-    color: white;
-    font-weight: 500;
+    text-align: center;
 
     @media (min-width: 769px) {
         width: 12vw;

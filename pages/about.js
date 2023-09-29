@@ -1,11 +1,11 @@
 import AboutSw from '@/components/AboutSw'
-import Skills from '@/components/Skills'
+// import Skills from '@/components/Skills'
 
 function About() {
   return (
     <>
     <AboutSw/>
-    <Skills/>
+    {/* <Skills/> */}
     </>
   )
 }
