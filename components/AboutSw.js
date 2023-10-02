@@ -35,7 +35,13 @@ function AboutSw() {
                 </motion.div>
             </AboutInfoContainer>
             <CvContainer>
-                <CvButton>CV</CvButton>
+                <a
+                    href="https://drive.google.com/file/d/1WJPheP86OCMre4KKXTZiFuwENJk0QVcf/view"
+                    target="_blank"
+                    rel="noopener noreferrer"
+                >
+                    <CvButton>CV</CvButton>
+                </a>
             </CvContainer>
         </AboutContainer>
     )
@@ -44,12 +50,11 @@ function AboutSw() {
 export default AboutSw
 
 const AboutContainer = styled.div`
-margin-top: 5rem;
+    margin-top: 5rem;
 
-@media (min-width: 769px) {
-       margin-top: 9rem;
+    @media (min-width: 769px) {
+        margin-top: 9rem;
     }
-
 `
 
 const AboutHeader = styled.h1`
@@ -87,12 +92,33 @@ const AboutText = styled.p`
 `
 
 const SweButton = styled.button`
-    margin: 2rem 0.6rem;
+    margin: 2rem 0.3rem;
+    padding: 0.5rem 1rem; /* Add padding for better button appearance */
     color: white;
     background-color: black;
+    border: none;
+    border-radius: 5px; /* Add rounded corners */
+    cursor: pointer; /* Add a pointer cursor on hover */
+
+    &:hover {
+        background-color: #333; /* Change color on hover */
+    }
 `
 
-const EnButton = styled.button``
+const EnButton = styled.button`
+    margin: 2rem 0.3rem;
+    padding: 0.5rem 1rem; /* Add padding for better button appearance */
+    color: black;
+    background-color: white;
+    border: 1px solid black;
+    border-radius: 5px; /* Add rounded corners */
+    cursor: pointer; /* Add a pointer cursor on hover */
+
+    &:hover {
+        background-color: #333; /* Change color on hover */
+    }
+`
+
 const CvContainer = styled.div`
     display: flex;
     justify-content: center;
@@ -102,7 +128,18 @@ const CvContainer = styled.div`
 const CvButton = styled.button`
     width: 10rem;
     height: 3rem;
+    font-weight: 600;
     margin-top: 2rem;
+    padding: 0.5rem 1rem; /* Add padding for better button appearance */
+    color: black;
+    background-color: white;
+    border: 1px solid black;
+    border-radius: 5px; /* Add rounded corners */
+    cursor: pointer; /* Add a pointer cursor on hover */
+
+    &:hover {
+        background-color: #333; /* Change color on hover */
+    }
 `
 
 const AboutImage = styled.img`

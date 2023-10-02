@@ -159,8 +159,7 @@ body {
     margin-left: 2rem;
     @media (min-width: 769px) {
 
-        color: blue;
-        text-decoration: underline;
+       
     }
 
   }
@@ -200,7 +199,6 @@ body {
 
   .FooterInfo {
     margin: 5px 0;
-
   }
 
   .FooterLinks {

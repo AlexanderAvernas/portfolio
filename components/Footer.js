@@ -9,7 +9,7 @@ function Footer() {
         <h4 className='ContactHeader'>Contact</h4>
         <ul className='FooterInfoContainer'>
           <li className='FooterInfo'>Mobile: <a className='FooterLinks' href={`tel:${phoneNumber}`}>{phoneNumber}</a></li>
-          <li className='FooterInfo'>Email: <a className='FooterLinks' href="mailto:Alexander.avernas@hotmail.se">Alexer.aver@hotmail.se</a></li>
+          <li className='FooterInfo'>Email: <a className='FooterLinks' href="mailto:alexander.avernas@gmail.com">alexander.avernas@gmail.com</a></li>
           <li className='FooterInfo'>LinkedIn: <a className='FooterLinks' href='https://www.linkedin.com/in/alexander-avern%C3%A4s-3aa752251/' target="_blank" rel="noopener noreferrer">My profile</a></li>
         </ul>
       </div>
