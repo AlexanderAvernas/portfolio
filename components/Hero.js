@@ -74,7 +74,7 @@ const HeroContainer = styled.div`
     }
 `
 const Header = styled.h1`
-    color: white;
+    color: #FF6B6B;
     line-height: 1;
     font-weight: 700;
     font-size: 3.5rem;
@@ -87,7 +87,7 @@ const Header = styled.h1`
     }
 `
 const Secondheader = styled.h2`
-    color: #24bca3;
+    color: white;
     font-size: 2rem;
     margin-bottom: 0;
 `

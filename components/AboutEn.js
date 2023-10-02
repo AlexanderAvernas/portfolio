@@ -36,7 +36,7 @@ function AboutEn() {
             </AboutInfoContainer>
             <CvContainer>
                 <a
-                    href="https://drive.google.com/file/d/1cZporYas0gjOLxm_shyTL-v11Rozomdm/view"
+                    href="https://drive.google.com/file/d/1eq59hwIqB8BDuhT_6NzZE44adkkpctsv/view?usp=sharing"
                     target="_blank"
                     rel="noopener noreferrer"
                 >

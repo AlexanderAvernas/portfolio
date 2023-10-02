@@ -36,7 +36,7 @@ function AboutSw() {
             </AboutInfoContainer>
             <CvContainer>
                 <a
-                    href="https://drive.google.com/file/d/1WJPheP86OCMre4KKXTZiFuwENJk0QVcf/view"
+                    href="https://drive.google.com/file/d/1QF2g9Ecs1TU3S5vry5yjnuSh2iHKpUkr/view?usp=sharing"
                     target="_blank"
                     rel="noopener noreferrer"
                 >
@@ -51,6 +51,7 @@ export default AboutSw
 
 const AboutContainer = styled.div`
     margin-top: 5rem;
+
 
     @media (min-width: 769px) {
         margin-top: 9rem;
