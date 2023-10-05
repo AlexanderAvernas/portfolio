@@ -136,6 +136,12 @@ const HeroImage = styled.img`
         right: 10.2vw;
         top: -1rem;
     }
+
+    @media (min-width: 1550px) {
+        width: 15rem;
+        right: 11.5vw;
+        top: -1rem;
+    }
 `
 
 const ImgHeader = styled.h2`

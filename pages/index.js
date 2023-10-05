@@ -18,28 +18,33 @@ export default function Home() {
                 <h1 className="prodjectHeader">Projects</h1>
                 <div className="ProjectInfocontainer">
                     <Prodjects
-                        image="images/VueSmall.png"
-                        info="Skate-shop"
-                        skills={["Vue", "Figma", "CSS"]}
-                        link="Project made with Vue. My first project with Vue where I made the design in Figma. Made it as a project in school"
-                        projectLink="https://alexanderavernas.github.io/Skate-vue-gh/"
-                    />
-                    <Prodjects
                         image="images/JS.png"
                         info="AdVenture"
-                        skills={["JavaScript", "CSS", "API"]}
+                        skills={['JavaScript', 'CSS', 'API','Github']}
                         link="Made with vanilla JavaScript and wheater API. First Project working with API. Made during a course in school."
                         projectLink="https://alexanderavernas.github.io/Js-Adventure-gh/"
                     />
-
-<Prodjects
+                    <Prodjects
+                        image="images/VueSmall.png"
+                        info="Skate-shop"
+                        skills={['Vue', 'Figma', 'CSS', 'Bootstrap', 'Github']}
+                        link="Project made with Vue Vite. Design made in Figma. Made During a Vue-course in school"
+                        projectLink="https://alexanderavernas.github.io/Skate-vue-gh/"
+                    />
+                    <Prodjects
                         image="images/ReactSeries.png"
                         info="Series"
-                        skills={["React", "CSS", "API"]}
-                        link="Project made with React and API. First React Project as a project in school"
+                        skills={['React', 'CSS', 'API','Github']}
+                        link="Project made with React and API. First React app made as a project in school"
                         projectLink="https://rad-kataifi-792c7a.netlify.app/"
                     />
-
+                     <Prodjects
+                        image="images/Port.png"
+                        info="Portfolio"
+                        skills={['React', 'CSS', 'Next.js', 'Github']}
+                        link="My portfolio made with Next.js. "
+                        
+                    />
                     <motion.div
                         ref={ref}
                         initial={{ opacity: 0, x: 100 }}
