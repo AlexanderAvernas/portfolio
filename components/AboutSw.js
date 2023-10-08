@@ -65,7 +65,7 @@ const AboutHeader = styled.h1`
 
     @media (min-width: 769px) {
         margin-left: 9rem;
-        margin-bottom: -3rem;
+        margin-bottom: -2rem;
     }
 `
 
