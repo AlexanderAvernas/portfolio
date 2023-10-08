@@ -119,6 +119,7 @@ body {
 
 .projectContainer {
     margin-top: 3rem;
+
     @media (min-width: 769px) {
         display: flex;
         flex-direction: row;
