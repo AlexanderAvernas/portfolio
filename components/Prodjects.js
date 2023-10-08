@@ -17,7 +17,7 @@ function Prodjects(props) {
             transition={{ duration: 0.75 }}
         >
             <div className='ProjectComponentContainer'>
-                <div className='ProjectTextContainer'>
+                <section className='ProjectTextContainer'>
                     <h4 className='ProdjectInfo'>{props.info}</h4>
                     <div className='SkillContainer'>
                     {props.skills.map((skill, index) => (
@@ -25,7 +25,7 @@ function Prodjects(props) {
                         ))}
                     </div>
                     <p className='ProjectLink'>{props.link}</p>
-                </div>
+                </section>
                 <div className='ProjectImageContainer'>
                     <a
                         href={props.projectLink}
