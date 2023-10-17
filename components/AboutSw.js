@@ -67,6 +67,9 @@ const AboutHeader = styled.h1`
         margin-left: 9rem;
         margin-bottom: -2rem;
     }
+    @media (min-width: 1450px) {
+        font-size: 4rem;
+    }
 `
 
 const AboutInfoContainer = styled.div`
