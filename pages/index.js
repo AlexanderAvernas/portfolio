@@ -20,7 +20,7 @@ export default function Home() {
                     <Prodjects
                         image="images/JS.png"
                         info="AdVenture"
-                        skills={['JavaScript', 'CSS', 'API','Github']}
+                        skills={['JavaScript', 'CSS', 'API', 'Github']}
                         link="Made with vanilla JavaScript and wheater API. First Project working with API. Made during a course in school."
                         projectLink="https://alexanderavernas.github.io/Js-Adventure-gh/"
                     />
@@ -34,17 +34,29 @@ export default function Home() {
                     <Prodjects
                         image="images/ReactSeries.png"
                         info="Series"
-                        skills={['React', 'CSS', 'API','Github']}
+                        skills={['React', 'CSS', 'API', 'Github']}
                         link="Project made with React and API. First React app made as a project in school"
                         projectLink="https://rad-kataifi-792c7a.netlify.app/"
                     />
-                     <Prodjects
+                    <Prodjects
+                        image="images/portfolioCMS.png"
+                        info="Gatsby-portfolio"
+                        skills={[
+                            'Headless CMS',
+                            'Gatsby',
+                            'Ionic Framework',
+                            'Contentful'
+                        ]}
+                        link="Portfolio made with headless CMS using Contentful and Gatsby. Made it as a project in school."
+                        projectLink="https://master--alexanderavernas.netlify.app/"
+                    />
+                    <Prodjects
                         image="images/Port.png"
                         info="Portfolio"
                         skills={['React', 'CSS', 'Next.js', 'Github']}
                         link="My portfolio made with Next.js. "
-                        
                     />
+
                     <motion.div
                         ref={ref}
                         initial={{ opacity: 0, x: 100 }}
