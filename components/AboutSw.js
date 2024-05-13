@@ -36,7 +36,7 @@ function AboutSw() {
             </AboutInfoContainer>
             <CvContainer>
                 <a
-                    href="https://drive.google.com/file/d/1QF2g9Ecs1TU3S5vry5yjnuSh2iHKpUkr/view?usp=sharing"
+                    href="https://drive.google.com/file/d/1xPsKUNiQbAqGAZDmrK6NHHq2XVZ63A9n/view"
                     target="_blank"
                     rel="noopener noreferrer"
                 >
