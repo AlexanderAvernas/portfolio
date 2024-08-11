@@ -17,12 +17,31 @@ export default function Home() {
             <div className="projectContainer">
                 <h1 className="prodjectHeader">Projects</h1>
                 <div className="ProjectInfocontainer">
-                    <Prodjects
+                    {/* <Prodjects
                         image="images/JS.png"
                         info="AdVenture"
                         skills={['JavaScript', 'CSS', 'API', 'Github']}
                         link="Made with vanilla JavaScript and wheater API. First Project working with API. Made during a course in school."
                         projectLink="https://alexanderavernas.github.io/Js-Adventure-gh/"
+                    /> */}
+                    <Prodjects
+                        image="images/MERN.png"
+                        info="ChattApp"
+                        skills={['React', 'MongoDB', 'Socket.io', 'TailwindCSS', 'Render']}
+                        link="Fullstack MERN-project "
+                        projectLink="https://chat-app-9n6r.onrender.com/login"
+                    />
+                       <Prodjects
+                        image="images/portfolioCMS.png"
+                        info="Gatsby-portfolio"
+                        skills={[
+                            'Headless CMS',
+                            'Gatsby',
+                            'Ionic Framework',
+                            'Contentful'
+                        ]}
+                        link="Portfolio made with headless CMS using Contentful and Gatsby. Made it as a project in school."
+                        projectLink="https://master--alexanderavernas.netlify.app/"
                     />
                     <Prodjects
                         image="images/VueSmall.png"
@@ -37,18 +56,6 @@ export default function Home() {
                         skills={['React', 'CSS', 'API', 'Github']}
                         link="Project made with React and API. First React app made as a project in school"
                         projectLink="https://rad-kataifi-792c7a.netlify.app/"
-                    />
-                    <Prodjects
-                        image="images/portfolioCMS.png"
-                        info="Gatsby-portfolio"
-                        skills={[
-                            'Headless CMS',
-                            'Gatsby',
-                            'Ionic Framework',
-                            'Contentful'
-                        ]}
-                        link="Portfolio made with headless CMS using Contentful and Gatsby. Made it as a project in school."
-                        projectLink="https://master--alexanderavernas.netlify.app/"
                     />
                     <Prodjects
                         image="images/Port.png"

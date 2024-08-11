@@ -9,13 +9,14 @@ function AboutEn() {
             <AboutHeader>About Me</AboutHeader>
             <AboutInfoContainer>
                 <AboutText>
-                    Hello! My name is Alexander, I'm 35 years old and I'm an
-                    aspiring frontend developer. I have always had a drive to
-                    create and solve problems. As a person, I'm goal-oriented,
-                    creative and structured. I enjoy challenges to learn new
-                    things and I like to work both independently and in teams.
-                    I'm very interested and I find it fun to create
-                    user-friendly, good-looking and responsive websites.
+                    Hello! My name is Alexander, I'm 35 years old, and I am a
+                    trained frontend developer from IT-Högskolan in Stockholm. I
+                    have always had a drive to create and solve problems. As a
+                    person, I am goal-oriented, creative, and organized. I enjoy
+                    challenges as they help me learn new things, and I like
+                    working both independently and in teams. I'm very passionate
+                    about and enjoy creating user-friendly, attractive, and
+                    responsive websites.
                     <br />
                     <br />
                     See my resumé for more information and experience.

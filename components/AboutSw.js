@@ -9,13 +9,14 @@ function AboutSw() {
             <AboutHeader>About Me</AboutHeader>
             <AboutInfoContainer>
                 <AboutText>
-                    Hej! Jag heter Alexander, är 35 år och är en blivande
-                    frontendutvecklare. Jag har alltid haft ett driv till att
-                    skapa och lösa problem. Som person är jag målinriktad,
-                    kreativ och strukturerad. Jag trivs med utmaningar för att
-                    lära mig nya saker och gillar att arbeta både enskilt och i
-                    team. Jag är väldigt intresserad och tycker det är kul att
-                    skapa användarvänliga, snygga och responsiva webbplatser.
+                    Hej! Jag heter Alexander, är 35 år och är utbildad
+                    frontendutvecklare på it-högskolan i Stockholm. Jag har
+                    alltid haft ett driv till att skapa och lösa problem. Som
+                    person är jag målinriktad, kreativ och strukturerad. Jag
+                    trivs med utmaningar för att lära mig nya saker och gillar
+                    att arbeta både enskilt och i team. Jag är väldigt
+                    intresserad och tycker det är kul att skapa användarvänliga,
+                    snygga och responsiva webbplatser.
                     <br />
                     <br />
                     Se mitt CV för mer information och erfarenheter.
@@ -51,7 +52,6 @@ export default AboutSw
 
 const AboutContainer = styled.div`
     margin-top: 5rem;
-
 
     @media (min-width: 769px) {
         margin-top: 9rem;
