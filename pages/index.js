@@ -19,7 +19,6 @@ export default function Home() {
                     method: 'HEAD',
                     mode: 'no-cors'
                 })
-                console.log('skickat iväg rquest')
             } catch (error) {
                 console.error('Error waking up the backend:', error)
             }
