@@ -356,7 +356,11 @@ body {
     display: flex;
     flex-direction: column;
     padding: 2rem 2rem;
-    @media (min-width: 769px) {
+    position: relative; /* For loading state positioning */
+}
+
+@media (min-width: 769px) {
+    .ProjectComponentContainer {
         flex-direction: row;
         justify-content: center;
     }
@@ -368,9 +372,6 @@ body {
         padding-top: 4rem;
     }
 }
-
-/* .ProdjectInfo {
-} */
 
 .SkillContainer {
     display: flex;
@@ -388,6 +389,7 @@ body {
 }
 
 .ProjectImageContainer {
+    position: relative; /* Position relative to allow absolute positioning of loading text */
     @media (min-width: 769px) {
         margin-left: 1rem;
     }
@@ -402,11 +404,93 @@ body {
 
     /* Add hover effect */
     &:hover {
-        transform: scale(1.05); /* Makes the image slightly bigger */
-         /* Adds a shadow on hover */
+        transform: scale(1.05);
     }
 }
 
-.ProjectLink{
+/* Loading state styles */
+.LoadingContainer {
+    position: relative;
+    width: 15rem;
+    height: 15rem;
+    display: flex;
+    flex-direction: column; /* Stack text and dots vertically */
+    justify-content: center;
+    align-items: center;
+    cursor: pointer;
+}
+
+.BlurryImage {
+    filter: blur(8px);
+    -webkit-filter: blur(8px); /* For Safari */
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    z-index: 1;
+}
+
+.LoadingText {
+
+    z-index: 2;
+    color: white;
+    font-size: 1.2rem;
+    text-align: center;
+    margin-bottom: 0.5rem;
+}
+
+.LoadingDots {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    margin-bottom: 8px; /* Space between dots and loading text */
+}
+
+.dot {
+    width: 16px;
+    height: 16px;
+    z-index: 3;
+    background-color: white;
+    border-radius: 50%;
+    margin: 0 4px;
+    animation: bounce 0.6s infinite alternate;
+}
+
+.dot:nth-child(2) {
+    animation-delay: 0.2s;
+}
+
+.dot:nth-child(3) {
+    animation-delay: 0.4s;
+}
+
+@keyframes bounce {
+    0% {
+        transform: translateY(0);
+    }
+    100% {
+        transform: translateY(-8px);
+    }
+}
+
+/* Retry button styles */
+.RetryButton {
+    padding: 0.5rem 1rem;
+    font-size: 1rem;
+    color: white;
+    border:rgb(0, 0, 0);
+    cursor: pointer;
+    transition: background-color 0.3s ease;
+    z-index: 2; /* Ensures the button is on top */
+    margin-top: 1rem;
+}
+
+.RetryButton:hover {
+    background-color: #0056b3;
+}
+
+.ProjectLink {
 
 }

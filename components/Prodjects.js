@@ -1,4 +1,4 @@
-import React from 'react'
+import { useState } from 'react'
 import { motion } from 'framer-motion'
 import { useInView } from 'react-intersection-observer'
 import styled from 'styled-components'
@@ -9,35 +9,122 @@ function Prodjects(props) {
         threshold: 0.2 // Percentage of the component visible to trigger the animation
     })
 
+    // State to handle loading and retry for specific project (ChattApp)
+    const [isLoading, setIsLoading] = useState(false)
+    const [showRetryButton, setShowRetryButton] = useState(false)
+
+    // Only apply the loading logic for the ChattApp
+    const handleFirstClick = async (e) => {
+        if (props.info === 'ChattApp') {
+            e.preventDefault()
+            setIsLoading(true) // Start loading
+            setShowRetryButton(false) // Hide retry button initially
+
+            try {
+                // Send a request to wake up the backend (MERN app)
+                await fetch(props.projectLink, {
+                    method: 'HEAD',
+                    mode: 'no-cors'
+                })
+
+                // Simulate a delay for the backend to wake up
+                setTimeout(() => {
+                    setIsLoading(false) // Stop loading
+                    setShowRetryButton(true) // Show retry button after delay
+                }, 1000) // 1 seconds delay (adjust as necessary)
+            } catch (error) {
+                console.error('Error waking up the backend:', error)
+                setIsLoading(false)
+                setShowRetryButton(true) // Still show retry button in case of error
+            }
+        }
+    }
+
+    const handleRetryClick = () => {
+        window.open(props.projectLink, '_blank', 'noopener noreferrer')
+    }
+
     return (
         <motion.div
             ref={ref}
             initial={{ opacity: 0, x: 100 }}
-            animate={{ opacity: inView ? 1 : 0, x: inView ? 0 : 100 }} // Change opacity and x position based on inView
+            animate={{ opacity: inView ? 1 : 0, x: inView ? 0 : 100 }}
             transition={{ duration: 0.75 }}
         >
-            <div className='ProjectComponentContainer'>
-                <section className='ProjectTextContainer'>
-                    <h4 className='ProdjectInfo'>{props.info}</h4>
-                    <div className='SkillContainer'>
-                    {props.skills.map((skill, index) => (
-                            <p className='ProjectSkill' key={index}>{skill}</p>
+            <div className="ProjectComponentContainer">
+                <section className="ProjectTextContainer">
+                    <h4 className="ProdjectInfo">{props.info}</h4>
+                    <div className="SkillContainer">
+                        {props.skills.map((skill, index) => (
+                            <p className="ProjectSkill" key={index}>
+                                {skill}
+                            </p>
                         ))}
                     </div>
-                    <p className='ProjectLink'>{props.link}</p>
+                    <p className="ProjectLink">{props.link}</p>
                 </section>
-                <div className='ProjectImageContainer'>
-                    <a
-                        href={props.projectLink}
-                        target="_blank"
-                        rel="noopener noreferrer"
-                    >
-                        <img className='ImageProdject'
+                <div className="ProjectImageContainer">
+                    {props.info === 'ChattApp' ? (
+                        isLoading ? (
+                            <div className="LoadingContainer">
+                                <img
+                                    className="BlurryImage"
+                                    src={props.image}
+                                    alt={`${props.info} project`}
+                                />
+                                <p className="LoadingText">
+                                    Loading... Warming up the server.
+                                </p>
+                                <div className="LoadingDots">
+                                    <span className="dot"></span>
+                                    <span className="dot"></span>
+                                    <span className="dot"></span>
+                                </div>
+                            </div>
+                        ) : showRetryButton ? (
+                            <div
+                                className="LoadingContainer"
+                                onClick={handleRetryClick}
+                            >
+                                <img
+                                    className="BlurryImage"
+                                    src={props.image}
+                                    alt={`${props.info} project`}
+                                />
+                                <p className="LoadingText">
+                                    Click again to open!
+                                </p>
+                            </div>
+                        ) : (
+                            // <button className="RetryButton" onClick={handleRetryClick}>
+                            //     Press again to open the app
+                            // </button>
+                            <a
+                                href={props.projectLink}
+                                target="_blank"
+                                rel="noopener noreferrer"
+                                onClick={handleFirstClick}
+                            >
+                                <img
+                                    className="ImageProdject"
+                                    src={props.image}
+                                    alt={`${props.info} project`}
+                                />
+                            </a>
+                        )
+                    ) : (
+                        <a
                             href={props.projectLink}
-                            src={props.image}
-                            alt="JavaScript project"
-                        />
-                    </a>
+                            target="_blank"
+                            rel="noopener noreferrer"
+                        >
+                            <img
+                                className="ImageProdject"
+                                src={props.image}
+                                alt={`${props.info} project`}
+                            />
+                        </a>
+                    )}
                 </div>
             </div>
         </motion.div>

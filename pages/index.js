@@ -1,3 +1,4 @@
+import { useEffect } from 'react'
 import Hero from '@/components/Hero'
 import HeroNew from '@/components/HeroNew'
 import Prodjects from '@/components/Prodjects'
@@ -9,6 +10,23 @@ export default function Home() {
         triggerOnce: true, // The animation will trigger only once when the component comes into view
         threshold: 0.2 // Percentage of the component visible to trigger the animation
     })
+
+    useEffect(() => {
+        // Send a request to wake up the backend as soon as the portfolio page loads
+        const wakeUpBackend = async () => {
+            try {
+                await fetch('https://chat-app-9n6r.onrender.com/login', {
+                    method: 'HEAD',
+                    mode: 'no-cors'
+                })
+                console.log('skickat iväg rquest')
+            } catch (error) {
+                console.error('Error waking up the backend:', error)
+            }
+        }
+
+        wakeUpBackend()
+    }, [])
 
     return (
         <>
@@ -27,11 +45,17 @@ export default function Home() {
                     <Prodjects
                         image="images/MERN.png"
                         info="ChattApp"
-                        skills={['React', 'MongoDB', 'Socket.io', 'TailwindCSS', 'Render']}
-                        link="Fullstack MERN-project "
+                        skills={[
+                            'React',
+                            'MongoDB',
+                            'Socket.io',
+                            'TailwindCSS',
+                            'Render'
+                        ]}
+                        link="Fullstack MERN-project. You may need to click the link twice because the server needs time to wake up, as I’m using a free plan on Render "
                         projectLink="https://chat-app-9n6r.onrender.com/login"
                     />
-                       <Prodjects
+                    <Prodjects
                         image="images/portfolioCMS.png"
                         info="Gatsby-portfolio"
                         skills={[
