@@ -42,6 +42,20 @@ export default function Home() {
                         projectLink="https://alexanderavernas.github.io/Js-Adventure-gh/"
                     /> */}
                     <Prodjects
+                        image="images/WatchList.png"
+                        info="WatchList"
+                        skills={[
+                            'React',
+                            'UseReducer',
+                            'localStorage',
+                            'API',
+                            'React-loading-skeleton',
+                            'styled-components'
+                        ]}
+                        link="A React-based application where users can search or browse hundreds of TV series, then save their favorites to a personalized MustWatchList using localStorage for persistence. The app handles state with useReducer, and uses react-loading-skeleton to display smooth loading states while fetching data from an API."
+                        projectLink="https://mustwatchseries.netlify.app/"
+                    />
+                    <Prodjects
                         image="images/MERN.png"
                         info="ChattApp"
                         skills={[
@@ -73,13 +87,13 @@ export default function Home() {
                         link="Project made with Vue Vite. Design made in Figma. Made During a Vue-course in school"
                         projectLink="https://alexanderavernas.github.io/Skate-vue-gh/"
                     />
-                    <Prodjects
+                    {/* <Prodjects
                         image="images/ReactSeries.png"
                         info="Series"
                         skills={['React', 'CSS', 'API', 'Github']}
                         link="Project made with React and API. First React app made as a project in school"
                         projectLink="https://rad-kataifi-792c7a.netlify.app/"
-                    />
+                    /> */}
                     <Prodjects
                         image="images/Port.png"
                         info="Portfolio"
