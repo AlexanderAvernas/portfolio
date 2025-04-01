@@ -42,6 +42,20 @@ export default function Home() {
                         projectLink="https://alexanderavernas.github.io/Js-Adventure-gh/"
                     /> */}
                     <Prodjects
+                        image="images/maSilver.png"
+                        info="Silver (In progress)"
+                        skills={[
+                            'Next.js',
+                            'TailwindCss',
+                            'localStorage',
+                            'UseReducer',
+                            'Contentful',
+                            'Klarna'
+                        ]}
+                        link="A Next.js-powered e-commerce project integrated with Klarna for seamless payments and Contentful as a headless CMS for managing products and images. The shopping cart is efficiently handled using useReducer and localStorage, while Tailwind CSS ensures a modern and responsive design. Set to go live soon as a fully functional online store."
+                        projectLink="https://masilver.netlify.app/"
+                    />
+                    <Prodjects
                         image="images/WatchList.png"
                         info="WatchList"
                         skills={[
