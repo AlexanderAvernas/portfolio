@@ -47,7 +47,7 @@ body {
 }
 
 .scrolled {
-    background-color: #dbe1e7; /* Change background color when scrolled */
+    background-color: white; /* Change background color when scrolled */
     transition: background-color 0.5s ease; /* Add a smooth transition effect */
 }
 
@@ -68,7 +68,7 @@ body {
 }
 
 .nav-link-item {
-    color: black;
+    color: #1a1a1a;
     font-size: large;
     font-weight: 600;
     text-decoration: none;
@@ -78,7 +78,7 @@ body {
 }
 
 .nav-link-item:hover {
-    color: #ff6b6b;
+    color: white;
 }
 
 .hamburger-menu {
@@ -160,51 +160,113 @@ body {
     overflow: hidden;
 }
 
-/* Footer */
+/* Footer som matchar HeroVisit - Modernare layout */
 
 .FooterContainer {
-    background-color: #333333;
-    color: #fff;
-    padding: 50px;
-    text-align: center;
+    background-color: #1a1a1a;
+    color: #b0b0b0;
+    padding: 3rem 2rem;
     margin-top: 3rem;
+}
 
-    @media (min-width: 769px) {
+@media (min-width: 769px) {
+    .FooterContainer {
+        padding: 4rem 6rem;
     }
 }
 
 .ContactContainer {
-    margin-bottom: 20px;
+    margin-bottom: 2rem;
+    max-width: 1200px;
+    margin-left: auto;
+    margin-right: auto;
 }
 
 .ContactHeader {
-    font-size: 1.4rem;
-    margin-bottom: 10px;
+    font-size: 1.5rem;
+    font-weight: 600;
+    margin-bottom: 1.5rem;
+    color: white;
+    position: relative;
+    display: inline-block;
+}
+
+.ContactHeader::after {
+    content: '';
+    position: absolute;
+    bottom: -8px;
+    left: 0;
+    width: 50px;
+    height: 2px;
+    background-color: #8b7355;
 }
 
 .FooterInfoContainer {
     list-style: none;
     padding: 0;
+    margin: 2rem 0 0 0;
+    display: flex;
+    flex-direction: column;
+    gap: 1rem;
+}
+
+@media (min-width: 769px) {
+    .FooterInfoContainer {
+        flex-direction: row;
+        justify-content: space-between;
+        gap: 2rem;
+        flex-wrap: wrap;
+    }
 }
 
 .FooterInfo {
-    margin: 5px 0;
+    margin: 0;
+    font-size: 0.95rem;
+    color: #8a8a8a;
+    display: flex;
+    flex-direction: column;
+    gap: 0.3rem;
+}
+
+@media (min-width: 769px) {
+    .FooterInfo {
+        font-size: 1rem;
+        flex: 1;
+        min-width: 250px;
+    }
+}
+
+.FooterInfoLabel {
+    font-weight: 600;
+    color: #b0b0b0;
+    font-size: 0.85rem;
+    text-transform: uppercase;
+    letter-spacing: 0.5px;
 }
 
 .FooterLinks {
-    color: white;
+    color: #8b7355;
     text-decoration: none;
+    transition: all 0.3s ease;
+    display: inline-block;
 }
 
 .FooterLinks:hover {
-    color: #ff6b6b;
-    font-weight: 600;
+    color: #a08565;
+    transform: translateX(3px);
 }
 
 .FooterText {
-    font-size: 0.8rem;
+    font-size: 0.85rem;
+    color: #6a6a6a;
+    margin-top: 2rem;
+    padding-top: 2rem;
+    border-top: 1px solid #2a2a2a;
+    text-align: center;
+    max-width: 1200px;
+    margin-left: auto;
+    margin-right: auto;
 }
-
 /* ----------------------------------------COMPONENTS----------------------------------------------- */
 
 /* HERO */
@@ -380,13 +442,13 @@ body {
 }
 
 .ProjectSkill {
-    border: 1px solid black;
+    border: 2px solid #8b7355;
     padding: 0.3rem 0.5rem;
     border-radius: 1rem;
     font-size: small;
     margin-right: 0.5rem;
-    background-color: grey;
-    color: white;
+    background-color: black;
+    color: #d4d1d1;
 }
 
 .ProjectImageContainer {
@@ -494,4 +556,339 @@ body {
 
 .ProjectLink {
 
+}
+
+/* Lägg till dessa i din befintliga CSS-fil */
+
+/* Utfällbar beskrivning för ProjectLink */
+.ProjectLink {
+    max-height: 4.5em; /* Cirka 3 rader */
+    overflow: hidden;
+    transition: max-height 0.3s ease;
+    line-height: 1.5;
+}
+
+.ProjectLink.expanded {
+    max-height: 1000px;
+}
+
+.ReadMoreButton {
+    background: none;
+    border: none;
+    color: #666;
+    font-size: 0.9rem;
+    font-weight: 500;
+    cursor: pointer;
+    padding: 0.5rem 0;
+    margin-top: 0.3rem;
+    transition: color 0.3s ease;
+}
+
+.ReadMoreButton:hover {
+    color: #000;
+}
+
+/* Overlay för projektbilder */
+.ProjectImageLink {
+    position: relative;
+    display: inline-block;
+}
+
+.ProjectOverlay {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: rgba(0, 0, 0, 0.75);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    opacity: 0;
+    transition: opacity 0.3s ease;
+    border-radius: 4px;
+}
+
+.ProjectImageLink:hover .ProjectOverlay {
+    opacity: 1;
+}
+
+.ViewProjectText {
+    color: white;
+    font-size: 1.1rem;
+    font-weight: 600;
+    transform: translateY(10px);
+    transition: transform 0.3s ease;
+}
+
+.ProjectImageLink:hover .ViewProjectText {
+    transform: translateY(0);
+}
+
+/* Förbättrad hover på projektbilder */
+.ImageProdject {
+    cursor: pointer;
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+.ProjectImageLink:hover .ImageProdject {
+    transform: scale(1.03);
+}
+
+
+/* ---------------------------- Hero Visitkort Section --------------------------------*/
+.HeroVisitContainer {
+    display: flex;
+    flex-direction: column;
+    min-height: 100vh;
+    width: 100%;
+    overflow-x: hidden;
+    background-color: #1a1a1a;
+}
+
+@media (min-width: 769px) {
+    .HeroVisitContainer {
+        flex-direction: row;
+    }
+}
+
+/* Vänster sida - Information */
+.HeroVisitLeft {
+    background-color: #1a1a1a;
+    padding: 2rem;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    color: white;
+    min-height: 50vh;
+    width: 100%;
+}
+
+@media (min-width: 769px) {
+    .HeroVisitLeft {
+        width: 55%;
+        min-height: 100vh;
+        padding: 3rem 4rem;
+    }
+}
+
+@media (min-width: 1200px) {
+    .HeroVisitLeft {
+        padding: 4rem 6rem;
+    }
+}
+
+.HeroVisitContent {
+    max-width: 600px;
+    width: 100%;
+}
+
+.HeroVisitName {
+    font-size: 2.5rem;
+    font-weight: 700;
+    line-height: 1.2;
+    margin: 0 0 0.5rem 0;
+    color: white;
+}
+
+@media (min-width: 769px) {
+    .HeroVisitName {
+        font-size: 3rem;
+    }
+}
+
+@media (min-width: 1200px) {
+    .HeroVisitName {
+        font-size: 3.5rem;
+    }
+}
+
+.HeroVisitName .NameAccent {
+    color: #8b7355;
+}
+
+.HeroVisitUnderline {
+    height: 2px;
+    width: 5rem;
+    background-color: #8b7355;
+    margin: 1rem 0;
+}
+
+.HeroVisitTitle {
+    font-size: 1.25rem;
+    font-weight: 400;
+    color: #b0b0b0;
+    margin: 0 0 1.5rem 0;
+}
+
+@media (min-width: 769px) {
+    .HeroVisitTitle {
+        font-size: 1.5rem;
+    }
+}
+
+.HeroVisitDescription {
+    color: #8a8a8a;
+    font-size: 0.95rem;
+    line-height: 1.6;
+    margin: 0 0 2rem 0;
+}
+
+@media (min-width: 769px) {
+    .HeroVisitDescription {
+        font-size: 1rem;
+    }
+}
+
+.HeroVisitContact {
+    display: flex;
+    flex-direction: column;
+    gap: 0.75rem;
+}
+
+.HeroContactItem {
+    display: flex;
+    align-items: center;
+    gap: 0.75rem;
+    color: #b0b0b0;
+    cursor: pointer;
+    transition: all 0.3s ease;
+    font-size: 0.9rem;
+}
+
+.HeroContactItem:hover {
+    color: #8b7355;
+    transform: translateX(5px);
+}
+
+.HeroContactIcon {
+    width: 1.25rem;
+    height: 1.25rem;
+    flex-shrink: 0;
+}
+
+/* Höger sida - Bild */
+.HeroVisitRight {
+    background-color: #1a1a1a;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    position: relative;
+    min-height: 50vh;
+    padding: 3rem 2rem;
+    width: 100%;
+}
+
+@media (min-width: 769px) {
+    .HeroVisitRight {
+        width: 45%;
+        min-height: 100vh;
+        padding: 4rem 3rem;
+    }
+}
+
+.HeroVisitImageWrapper {
+    width: 280px;
+    height: 280px;
+    position: relative;
+    border-radius: 50%;
+    padding: 12px;
+    border: 3px solid #8b7355;
+    box-shadow: 0 10px 30px rgba(0, 0, 0, 0.5);
+    background-color: #1a1a1a;
+}
+
+@media (min-width: 769px) {
+    .HeroVisitImageWrapper {
+        width: 350px;
+        height: 350px;
+        padding: 15px;
+    }
+}
+
+@media (min-width: 1200px) {
+    .HeroVisitImageWrapper {
+        width: 400px;
+        height: 400px;
+        padding: 18px;
+    }
+}
+
+.HeroVisitImage {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    display: block;
+    position: relative;
+    z-index: 2;
+    border-radius: 50%;
+}
+
+.HeroVisitImagePlaceholder {
+    position: absolute;
+    inset: 12px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    background: linear-gradient(135deg, #2a2a2a 0%, #1a1a1a 100%);
+    font-size: 5rem;
+    font-weight: 700;
+    color: rgba(139, 115, 85, 0.3);
+    z-index: 1;
+    border-radius: 50%;
+}
+
+@media (min-width: 769px) {
+    .HeroVisitImagePlaceholder {
+        inset: 15px;
+    }
+}
+
+@media (min-width: 1200px) {
+    .HeroVisitImagePlaceholder {
+        inset: 18px;
+    }
+}
+
+.HeroVisitScrollIndicator {
+    position: relative;
+    margin-top: 3rem;
+    text-align: center;
+    z-index: 10;
+}
+
+@media (min-width: 769px) {
+    .HeroVisitScrollIndicator {
+        position: absolute;
+        bottom: 3rem;
+        left: 50%;
+        transform: translateX(-50%);
+        margin-top: 0;
+    }
+}
+
+.HeroVisitScrollText {
+    font-size: 0.85rem;
+    color: #8a8a8a;
+    margin: 0 0 0.5rem 0;
+    white-space: nowrap;
+    font-weight: 400;
+}
+
+.HeroVisitScrollArrow {
+    width: 1.5rem;
+    height: 1.5rem;
+    margin: 0 auto;
+    color: #8b7355;
+    animation: heroScrollBounce 2s ease-in-out infinite;
+}
+
+@keyframes heroScrollBounce {
+    0%, 100% {
+        transform: translateY(0);
+    }
+    50% {
+        transform: translateY(8px);
+    }
 }

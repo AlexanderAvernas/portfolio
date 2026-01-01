@@ -4,6 +4,8 @@ import HeroNew from '@/components/HeroNew'
 import Prodjects from '@/components/Prodjects'
 import { motion } from 'framer-motion'
 import { useInView } from 'react-intersection-observer'
+import BusinessCardHero from '@/components/BusinessCardHero'
+import HeroVisit from '@/components/HeroVisit'
 
 export default function Home() {
     const { ref, inView } = useInView({
@@ -29,7 +31,8 @@ export default function Home() {
 
     return (
         <>
-            <Hero />
+            {/* <Hero /> */}
+            <HeroVisit/>
             {/* <HeroNew/> */}
             <div className="projectContainer">
                 <h1 className="prodjectHeader">Projects</h1>
