@@ -46,17 +46,17 @@ export default function Home() {
                     /> */}
                     <Prodjects
                         image="images/maSilver.png"
-                        info="Silver (In progress)"
+                        info="E-commerce"
                         skills={[
                             'Next.js',
                             'TailwindCss',
                             'localStorage',
                             'UseReducer',
-                            'Contentful',
+                            'Sanity',
                             'Klarna'
                         ]}
-                        link="A Next.js-powered e-commerce project integrated with Klarna for seamless payments and Contentful as a headless CMS for managing products and images. The shopping cart is efficiently handled using useReducer and localStorage, while Tailwind CSS ensures a modern and responsive design. Set to go live soon as a fully functional online store."
-                        projectLink="https://masilver.netlify.app/"
+                        link="A Next.js-powered e-commerce project integrated with Klarna for seamless payments and Sanity as a headless CMS for managing products and images. The shopping cart is efficiently handled using useReducer and localStorage, while Tailwind CSS ensures a modern and responsive design. Set to go live soon as a fully functional online store."
+                        projectLink="https://margaretaavernas.se/"
                     />
                     <Prodjects
                         image="images/WatchList.png"
