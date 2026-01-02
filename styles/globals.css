@@ -78,7 +78,7 @@ body {
 }
 
 .nav-link-item:hover {
-    color: white;
+    color: #8b7355;
 }
 
 .hamburger-menu {
@@ -561,32 +561,6 @@ body {
 /* Lägg till dessa i din befintliga CSS-fil */
 
 /* Utfällbar beskrivning för ProjectLink */
-.ProjectLink {
-    max-height: 4.5em; /* Cirka 3 rader */
-    overflow: hidden;
-    transition: max-height 0.3s ease;
-    line-height: 1.5;
-}
-
-.ProjectLink.expanded {
-    max-height: 1000px;
-}
-
-.ReadMoreButton {
-    background: none;
-    border: none;
-    color: #666;
-    font-size: 0.9rem;
-    font-weight: 500;
-    cursor: pointer;
-    padding: 0.5rem 0;
-    margin-top: 0.3rem;
-    transition: color 0.3s ease;
-}
-
-.ReadMoreButton:hover {
-    color: #000;
-}
 
 /* Overlay för projektbilder */
 .ProjectImageLink {
