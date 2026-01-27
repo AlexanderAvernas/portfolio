@@ -17,20 +17,9 @@ body {
 
 /* Add a margin to the content to prevent it from being overlapped by the navbar */
 .content {
-    margin-top: -60px; /* Adjust the value as needed */
+    margin-top: 0; /* Adjust the value as needed */
 }
 
-/* Add a background color to the content to prevent it from showing through the navbar */
-.content::before {
-    content: '';
-    position: absolute;
-    top: -60px; /* Should match the margin-top value for .content */
-    left: 0;
-    width: 100%;
-    height: 100px; /* Should match the margin-top value for .content */
-    background-color: white; /* Background color of the content area */
-    z-index: -1;
-}
 
 .navbar-container {
     display: flex;
@@ -117,32 +106,82 @@ body {
     }
 }
 
+/* Projects Container och Header - Fixad för mobil */
 .projectContainer {
-    margin-top: 3rem;
+    margin-top: 2rem;
+    padding: 0 1rem;
 
     @media (min-width: 769px) {
         display: flex;
         flex-direction: row;
         justify-content: center;
         margin: 5rem 0rem;
+        padding: 0;
     }
 }
 
 .prodjectHeader {
-    margin-left: 1.8rem;
-    margin-top: 1rem;
-    font-size: 3rem;
+    margin: 0 0 1.5rem 0;
+    padding: 0;
+    font-size: 2.5rem;
     font-weight: 600;
+    position: relative;
+    display: inline-block;
 
     @media (min-width: 769px) {
         padding-right: 3rem;
         padding-top: 4.5rem;
         border-right: 3px solid black;
         font-size: 2.5rem;
-        /* margin-left: 4rem;
-        margin-right: 4rem;
-        margin-top: 4rem; */
+        margin: 0;
     }
+}
+
+/* Lägg till underline på mobil */
+.prodjectHeader::after {
+    content: '';
+    position: absolute;
+    bottom: -8px;
+    left: 0;
+    width: 60px;
+    height: 3px;
+    background-color: #8b7355;
+
+    @media (min-width: 769px) {
+        display: none;
+    }
+}
+
+/* Overlay text - enkel och tydlig */
+.ProjectOverlay {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: rgba(0, 0, 0, 0.75);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    opacity: 0;
+    transition: opacity 0.3s ease;
+    border-radius: 4px;
+}
+
+.ProjectImageLink:hover .ProjectOverlay {
+    opacity: 1;
+}
+
+.ViewProjectText {
+    color: white;
+    font-size: 1rem;
+    font-weight: 600;
+    transform: translateY(10px);
+    transition: transform 0.3s ease;
+}
+
+.ProjectImageLink:hover .ViewProjectText {
+    transform: translateY(0);
 }
 
 .prodjectProgress {
@@ -412,80 +451,149 @@ body {
     }
 }
 
-/* Projects */
+/* Projects - Kompaktare och cleanare design */
 
 .ProjectComponentContainer {
     display: flex;
     flex-direction: column;
-    padding: 2rem 2rem;
-    position: relative; /* For loading state positioning */
+    padding: 1.5rem 1.5rem;
+    position: relative;
+    border-bottom: 1px solid #e0e0e0;
+}
+
+.ProjectComponentContainer:last-child {
+    border-bottom: none;
 }
 
 @media (min-width: 769px) {
     .ProjectComponentContainer {
         flex-direction: row;
-        justify-content: center;
+        justify-content: space-between;
+        align-items: center;
+        padding: 2rem 2rem;
+        gap: 2rem;
     }
 }
 
 .ProjectTextContainer {
-    @media (min-width: 769px) {
-        width: 27rem;
-        padding-top: 4rem;
+    flex: 1;
+    max-width: 600px;
+}
+
+@media (min-width: 769px) {
+    .ProjectTextContainer {
+        padding-top: 0;
+    }
+}
+
+.ProjectInfo {
+    font-size: 1.4rem;
+    font-weight: 600;
+    margin: 0 0 0.75rem 0;
+    color: #1a1a1a;
+}
+
+@media (min-width: 769px) {
+    .ProjectInfo {
+        font-size: 1.5rem;
     }
 }
 
 .SkillContainer {
     display: flex;
     flex-wrap: wrap;
-    margin-top: 0.8rem;
+    gap: 0.5rem;
+    margin: 0.75rem 0;
 }
 
 .ProjectSkill {
-    border: 1.5px solid #8b7355;
-    padding: 0.3rem 0.5rem;
+    border: 1px solid #8b7355;
+    padding: 0.25rem 0.6rem;
     border-radius: 1rem;
-    font-size: small;
-    margin-right: 0.5rem;
-    background-color: #d4d1d1;
-    color: black;
+    font-size: 0.75rem;
+    margin: 0;
+    background-color: #f9f9f9;
+    color: #1a1a1a;
+    font-weight: 500;
+    transition: all 0.2s ease;
+}
+
+.ProjectSkill:hover {
+    background-color: #8b7355;
+    color: white;
+}
+
+.ProjectLink {
+    font-size: 0.9rem;
+    line-height: 1.5;
+    color: #666;
+    margin: 0.75rem 0 0 0;
+}
+
+@media (min-width: 769px) {
+    .ProjectLink {
+        font-size: 0.95rem;
+        line-height: 1.6;
+    }
 }
 
 .ProjectImageContainer {
-    position: relative; /* Position relative to allow absolute positioning of loading text */
-    @media (min-width: 769px) {
-        margin-left: 1rem;
+    position: relative;
+    flex-shrink: 0;
+    margin-top: 1rem;
+}
+
+@media (min-width: 769px) {
+    .ProjectImageContainer {
+        margin-top: 0;
+        margin-left: 0;
     }
 }
 
 .ImageProdject {
-    width: 15rem;
-    margin-top: 0.5rem;
-    border: 0px solid black;
-    transition: transform 0.3s ease;
-    box-shadow: 0px 0px 10px rgba(0, 0, 0, 0.9);
+    width: 100%;
+    max-width: 280px;
+    height: auto;
+    border-radius: 8px;
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+    box-shadow: 0px 4px 12px rgba(0, 0, 0, 0.15);
+}
 
-    /* Add hover effect */
-    &:hover {
-        transform: scale(1.05);
+@media (min-width: 769px) {
+    .ImageProdject {
+        width: 280px;
     }
 }
 
-/* Loading state styles */
+.ImageProdject:hover {
+    transform: translateY(-4px);
+    box-shadow: 0px 8px 20px rgba(0, 0, 0, 0.25);
+}
+
+/* Loading state styles - kompaktare */
 .LoadingContainer {
     position: relative;
-    width: 15rem;
-    height: 15rem;
+    width: 100%;
+    max-width: 280px;
+    height: 200px;
     display: flex;
-    flex-direction: column; /* Stack text and dots vertically */
+    flex-direction: column;
     justify-content: center;
     align-items: center;
     cursor: pointer;
+    border-radius: 8px;
+    overflow: hidden;
+}
+
+@media (min-width: 769px) {
+    .LoadingContainer {
+        width: 280px;
+    }
 }
 
 .BlurryImage {
     filter: blur(8px);
-    -webkit-filter: blur(8px); /* For Safari */
+    -webkit-filter: blur(8px);
     position: absolute;
     top: 0;
     left: 0;
@@ -496,29 +604,30 @@ body {
 }
 
 .LoadingText {
-
     z-index: 2;
     color: white;
-    font-size: 1.2rem;
+    font-size: 1rem;
     text-align: center;
     margin-bottom: 0.5rem;
+    font-weight: 600;
+    text-shadow: 0 2px 4px rgba(0, 0, 0, 0.5);
 }
 
 .LoadingDots {
     display: flex;
     justify-content: center;
     align-items: center;
-    margin-bottom: 8px; /* Space between dots and loading text */
+    gap: 4px;
 }
 
 .dot {
-    width: 16px;
-    height: 16px;
+    width: 12px;
+    height: 12px;
     z-index: 3;
     background-color: white;
     border-radius: 50%;
-    margin: 0 4px;
     animation: bounce 0.6s infinite alternate;
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.3);
 }
 
 .dot:nth-child(2) {
@@ -528,39 +637,6 @@ body {
 .dot:nth-child(3) {
     animation-delay: 0.4s;
 }
-
-@keyframes bounce {
-    0% {
-        transform: translateY(0);
-    }
-    100% {
-        transform: translateY(-8px);
-    }
-}
-
-/* Retry button styles */
-.RetryButton {
-    padding: 0.5rem 1rem;
-    font-size: 1rem;
-    color: white;
-    border:rgb(0, 0, 0);
-    cursor: pointer;
-    transition: background-color 0.3s ease;
-    z-index: 2; /* Ensures the button is on top */
-    margin-top: 1rem;
-}
-
-.RetryButton:hover {
-    background-color: #0056b3;
-}
-
-.ProjectLink {
-
-}
-
-/* Lägg till dessa i din befintliga CSS-fil */
-
-/* Utfällbar beskrivning för ProjectLink */
 
 /* Overlay för projektbilder */
 .ProjectImageLink {
@@ -574,13 +650,13 @@ body {
     left: 0;
     width: 100%;
     height: 100%;
-    background: rgba(0, 0, 0, 0.75);
+    background: rgba(0, 0, 0, 0.7);
     display: flex;
     align-items: center;
     justify-content: center;
     opacity: 0;
     transition: opacity 0.3s ease;
-    border-radius: 4px;
+    border-radius: 8px;
 }
 
 .ProjectImageLink:hover .ProjectOverlay {
@@ -589,7 +665,7 @@ body {
 
 .ViewProjectText {
     color: white;
-    font-size: 1.1rem;
+    font-size: 1rem;
     font-weight: 600;
     transform: translateY(10px);
     transition: transform 0.3s ease;
@@ -598,17 +674,6 @@ body {
 .ProjectImageLink:hover .ViewProjectText {
     transform: translateY(0);
 }
-
-/* Förbättrad hover på projektbilder */
-.ImageProdject {
-    cursor: pointer;
-    transition: transform 0.3s ease, box-shadow 0.3s ease;
-}
-
-.ProjectImageLink:hover .ImageProdject {
-    transform: scale(1.03);
-}
-
 
 /* ---------------------------- Hero Visitkort Section --------------------------------*/
 .HeroVisitContainer {

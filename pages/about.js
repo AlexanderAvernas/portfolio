@@ -1,11 +1,11 @@
 import AboutSw from '@/components/AboutSw'
-// import Skills from '@/components/Skills'
+import StickyNavButton from '@/components/StickyNavButton'
 
 function About() {
   return (
     <>
-    <AboutSw/>
-    {/* <Skills/> */}
+      <AboutSw/>
+      <StickyNavButton />
     </>
   )
 }

@@ -1,211 +1,196 @@
-import React from 'react'
-import { motion } from 'framer-motion'
-import styled from 'styled-components'
-import Link from 'next/link'
+import React from "react";
+import { motion } from "framer-motion";
+import styled from "styled-components";
+import Link from "next/link";
 
 function AboutSw() {
-    return (
-        <AboutContainer>
-            <AboutHeader>
-                About
-                <HeaderUnderline />
-            </AboutHeader>
-            <AboutInfoContainer>
-                <AboutTextWrapper>
-                    <AboutText>
-                        Hej! Jag heter Alexander, är 35 år och är utbildad
-                        frontendutvecklare på it-högskolan i Stockholm. Jag har
-                        alltid haft ett driv till att skapa och lösa problem. Som
-                        person är jag målinriktad, kreativ och strukturerad. Jag
-                        trivs med utmaningar för att lära mig nya saker och gillar
-                        att arbeta både enskilt och i team. Jag är väldigt
-                        intresserad och tycker det är kul att skapa användarvänliga,
-                        snygga och responsiva webbplatser.
-                        <br />
-                        <br />
-                        Se mitt CV för mer information och erfarenheter.
-                    </AboutText>
-                    <LanguageButtonContainer>
-                        <SweButton>SV</SweButton>
-                        <Link href="about/en">
-                            <EnButton>EN</EnButton>
-                        </Link>
-                    </LanguageButtonContainer>
-                </AboutTextWrapper>
-                <motion.div
-                    initial={{ opacity: 0, y: -10 }}
-                    animate={{ opacity: 1, y: 0 }}
-                    exit={{ opacity: 0, y: 10 }}
-                    transition={{ duration: 1.5 }}
-                >
-                    <AboutImage src="images/NyCv.JPG" />
-                </motion.div>
-            </AboutInfoContainer>
-            <CvContainer>
-                <a
-                    href="https://drive.google.com/file/d/1xPsKUNiQbAqGAZDmrK6NHHq2XVZ63A9n/view"
-                    target="_blank"
-                    rel="noopener noreferrer"
-                >
-                    <CvButton>CV</CvButton>
-                </a>
-            </CvContainer>
-        </AboutContainer>
-    )
+  return (
+    <AboutSection>
+      <Hero>
+        <HeroImage
+          initial={{ opacity: 0 }}
+          animate={{ opacity: 1 }}
+          transition={{ duration: 1.2 }}
+        >
+          <img src="images/NyCv.JPG" alt="Alexander Avernäs" />
+        </HeroImage>
+
+        <HeroContent>
+          {/* <Header>
+                        <h1>About</h1>
+                        <HeaderUnderline />
+                    </Header> */}
+
+          <AboutText>
+            Hej! Jag heter Alexander och arbetat många år inom vården
+            men NU har jag valt att byta bana för att jobba med det jag tycker
+            är riktigt kul!, att skapa, lösa problem och se saker växa fram. Jag
+            är utbildad frontendutvecklare och vill arbeta med design och
+            problemlösning!
+            <br />
+            <br />
+            Jag är noggrann, gillar att göra saker ordentligt och sätter
+            stolthet i att lämna ett bra arbete efter mig.
+          </AboutText>
+
+          <Actions>
+            {/* <LanguageSwitch>
+                            <SweButton>SV</SweButton>
+                            <Link href="about/en">
+                                <EnButton>EN</EnButton>
+                            </Link>
+                        </LanguageSwitch> */}
+
+            <a
+              href="https://drive.google.com/file/d/1xPsKUNiQbAqGAZDmrK6NHHq2XVZ63A9n/view"
+              target="_blank"
+              rel="noopener noreferrer"
+            >
+              <CvButton>CV</CvButton>
+            </a>
+          </Actions>
+        </HeroContent>
+      </Hero>
+    </AboutSection>
+  );
 }
 
-export default AboutSw
+export default AboutSw;
 
-const AboutContainer = styled.div`
-    margin-top: 5rem;
-    max-width: 1400px;
-    margin-left: auto;
-    margin-right: auto;
-    padding: 0 1.5rem;
+// ============================== STYLES ==============================
 
-    @media (min-width: 769px) {
-        margin-top: 9rem;
-        padding: 0 4rem;
+const AboutSection = styled.section`
+  width: 100%;
+  margin-top: 5rem;
+`;
+
+const Hero = styled.div`
+  position: relative;
+  display: flex;
+  flex-direction: column;
+
+  @media (min-width: 1024px) {
+    flex-direction: row;
+    min-height: 70vh;
+  }
+`;
+
+const HeroImage = styled(motion.div)`
+  width: 100%;
+  position: relative;
+
+  &::after {
+    content: "";
+    position: absolute;
+    inset: 0;
+    background: linear-gradient(
+      to bottom,
+      rgba(0, 0, 0, 0.45),
+      rgba(0, 0, 0, 0.65)
+    );
+
+    @media (min-width: 1024px) {
+      display: none;
     }
-`
+  }
 
-const AboutHeader = styled.h1`
-    font-size: 3rem;
-    font-weight: 600;
-    margin: 1.5rem 0;
+  img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    display: block;
+  }
+
+  @media (min-width: 1024px) {
+    width: 50%;
+    height: auto;
+  }
+`;
+
+const HeroContent = styled.div`
+  position: absolute;
+  inset: 0;
+  padding: 2rem;
+  display: flex;
+  flex-direction: column;
+  justify-content: flex-end;
+  gap: 1.5rem;
+  color: white;
+
+  @media (min-width: 1024px) {
     position: relative;
-    display: inline-block;
+    inset: auto;
+    max-width: 600px;
+    padding-top: 10rem;
+    color: #2a2a2a;
+    justify-content: flex-start;
+  }
+`;
 
-    @media (min-width: 769px) {
-        margin-left: 0;
-        margin-bottom: 3rem;
+/* const Header = styled.div`
+    h1 {
+        font-size: 3rem;
+        margin: 0;
+        font-weight: 600;
     }
-    @media (min-width: 1450px) {
-        font-size: 4rem;
-    }
-`
+` */
 
 const HeaderUnderline = styled.div`
-    position: absolute;
-    bottom: -8px;
-    left: 0;
-    width: 80px;
-    height: 3px;
-    background-color: #8b7355;
-`
-
-const AboutInfoContainer = styled.div`
-    display: flex;
-    flex-direction: column;
-    justify-content: center;
-    align-items: flex-start;
-    gap: 3rem;
-
-    @media (min-width: 769px) {
-        flex-direction: row;
-        align-items: flex-start;
-        gap: 4rem;
-    }
-`
-
-const AboutTextWrapper = styled.div`
-    display: flex;
-    flex-direction: column;
-    flex: 1;
-`
+  width: 70px;
+  height: 3px;
+  background-color: #8b7355;
+  margin-top: 0.5rem;
+`;
 
 const AboutText = styled.p`
-    margin: 0;
-    font-weight: 400;
-    line-height: 1.8;
-    color: #2a2a2a;
+  margin: 0;
+  line-height: 1.6;
+  font-size: 1.0rem;
+  color: inherit;
+  text-shadow: 0 2px 8px rgba(0, 0, 0, 0.45);
 
-    @media (min-width: 769px) {
-        font-size: 1.1rem;
-        font-weight: 400;
-    }
-`
+  @media (min-width: 1024px) {
+    text-shadow: none;
+    font-size: 1.05rem;
+  }
+`;
 
-const LanguageButtonContainer = styled.div`
-    display: flex;
-    gap: 0.5rem;
-    margin-top: 2rem;
-`
+const Actions = styled.div`
+  display: flex;
+  gap: 1.5rem;
+  align-items: center;
+  flex-wrap: wrap;
+`;
+
+const LanguageSwitch = styled.div`
+  display: flex;
+  gap: 0.5rem;
+`;
 
 const SweButton = styled.button`
-    padding: 0.6rem 1.2rem;
-    color: white;
-    background-color: #8b7355;
-    border: none;
-    border-radius: 6px;
-    cursor: pointer;
-    font-weight: 500;
-    transition: all 0.3s ease;
-
-    &:hover {
-        background-color: #6b5335;
-        transform: translateY(-2px);
-        box-shadow: 0 4px 8px rgba(139, 115, 85, 0.3);
-    }
-`
+  padding: 0.5rem 1.1rem;
+  background-color: #8b7355;
+  color: white;
+  border: none;
+  border-radius: 6px;
+  cursor: pointer;
+`;
 
 const EnButton = styled.button`
-    padding: 0.6rem 1.2rem;
-    color: #8b7355;
-    background-color: white;
-    border: 2px solid #8b7355;
-    border-radius: 6px;
-    cursor: pointer;
-    font-weight: 500;
-    transition: all 0.3s ease;
-
-    &:hover {
-        background-color: #8b7355;
-        color: white;
-        transform: translateY(-2px);
-        box-shadow: 0 4px 8px rgba(139, 115, 85, 0.3);
-    }
-`
-
-const CvContainer = styled.div`
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    margin-top: 3rem;
-
-    @media (min-width: 769px) {
-        justify-content: flex-start;
-    }
-`
+  padding: 0.5rem 1.1rem;
+  background-color: transparent;
+  color: #8b7355;
+  border: 2px solid #8b7355;
+  border-radius: 6px;
+  cursor: pointer;
+`;
 
 const CvButton = styled.button`
-    width: 10rem;
-    height: 3rem;
-    font-weight: 600;
-    padding: 0.5rem 1rem;
-    color: white;
-    background-color: #8b7355;
-    border: none;
-    border-radius: 6px;
-    cursor: pointer;
-    font-size: 1rem;
-    transition: all 0.3s ease;
-
-    &:hover {
-        background-color: #6b5335;
-        transform: translateY(-2px);
-        box-shadow: 0 4px 12px rgba(139, 115, 85, 0.4);
-    }
-`
-
-const AboutImage = styled.img`
-    width: 100%;
-    box-shadow: 0px 4px 20px rgba(0, 0, 0, 0.2);
-    border-radius: 8px;
-
-    @media (min-width: 769px) {
-        width: 25vw;
-        min-width: 300px;
-        align-self: flex-start;
-    }
-`
+  padding: 0.6rem 1.6rem;
+  background-color: #8b7355;
+  color: white;
+  border: none;
+  border-radius: 8px;
+  font-weight: 600;
+  cursor: pointer;
+`;

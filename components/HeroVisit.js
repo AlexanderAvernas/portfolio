@@ -17,8 +17,7 @@ function HeroVisit() {
             <h2 className="HeroVisitTitle">Frontend Developer</h2>
 
             <p className="HeroVisitDescription">
-              Skapar moderna och engagerande webbupplevelser med fokus på
-              användarvänlighet och design
+              
             </p>
           </div>
 
@@ -93,7 +92,7 @@ function HeroVisit() {
         </div>
 
         <div className="HeroVisitScrollIndicator">
-          <p className="HeroVisitScrollText">Scroll för projekt</p>
+          <p className="HeroVisitScrollText">Scrolla för info</p>
           <svg
             className="HeroVisitScrollArrow"
             fill="none"

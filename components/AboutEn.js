@@ -6,206 +6,182 @@ import Link from 'next/link'
 function AboutEn() {
     return (
         <AboutContainer>
-            <AboutHeader>
-                About
+            <Header>
+                <h1>About</h1>
                 <HeaderUnderline />
-            </AboutHeader>
-            <AboutInfoContainer>
-                <AboutTextWrapper>
+            </Header>
+
+            <ContentGrid>
+                <TextSection>
                     <AboutText>
-                        Hello! My name is Alexander, I'm 35 years old, and I am a
-                        trained frontend developer from IT-Högskolan in Stockholm. I
-                        have always had a drive to create and solve problems. As a
-                        person, I am goal-oriented, creative, and organized. I enjoy
-                        challenges as they help me learn new things, and I like
-                        working both independently and in teams. I'm very passionate
-                        about and enjoy creating user-friendly, attractive, and
-                        responsive websites.
-                        <br />
-                        <br />
+                        Hello! My name is Alexander, I’m 35 years old and a trained
+                        frontend developer from IT-Högskolan in Stockholm. I have
+                        always had a strong drive to create and solve problems.
+                        <br /><br />
+                        As a person, I am goal-oriented, creative, and structured.
+                        I enjoy challenges as they help me learn new things, and I
+                        like working both independently and in teams.
+                        <br /><br />
                         See my resumé for more information and experience.
                     </AboutText>
-                    <LanguageButtonContainer>
-                        <Link href="/about">
-                            <SweButton>SV</SweButton>
-                        </Link>
-                        <EnButton>EN</EnButton>
-                    </LanguageButtonContainer>
-                </AboutTextWrapper>
+
+                    <Actions>
+                        <LanguageSwitch>
+                            <Link href="/about">
+                                <SweButton>SV</SweButton>
+                            </Link>
+                            <EnButton>EN</EnButton>
+                        </LanguageSwitch>
+
+                        <a
+                            href="https://drive.google.com/file/d/1HgYvcYfhjhtTO9JCaDILEUBEyJccwCqb/view"
+                            target="_blank"
+                            rel="noopener noreferrer"
+                        >
+                            <CvButton>Resumé</CvButton>
+                        </a>
+                    </Actions>
+                </TextSection>
+
                 <motion.div
                     initial={{ opacity: 0, y: -10 }}
                     animate={{ opacity: 1, y: 0 }}
-                    exit={{ opacity: 0, y: 10 }}
-                    transition={{ duration: 1.5 }}
+                    transition={{ duration: 1.2 }}
                 >
-                    <AboutImage src="../images/NyCv.JPG" />
+                    <AboutImage src="/images/NyCv.JPG" />
                 </motion.div>
-            </AboutInfoContainer>
-            <CvContainer>
-                <a
-                    href="https://drive.google.com/file/d/1HgYvcYfhjhtTO9JCaDILEUBEyJccwCqb/view"
-                    target="_blank"
-                    rel="noopener noreferrer"
-                >
-                    <CvButton>Resumé</CvButton>
-                </a>
-            </CvContainer>
+            </ContentGrid>
         </AboutContainer>
     )
 }
 
 export default AboutEn
 
-const AboutContainer = styled.div`
-    margin-top: 5rem;
-    max-width: 1400px;
-    margin-left: auto;
-    margin-right: auto;
-    padding: 0 1.5rem;
+/* -------------------- STYLES -------------------- */
 
-    @media (min-width: 769px) {
-        margin-top: 9rem;
-        padding: 0 4rem;
+const AboutContainer = styled.section`
+    max-width: 1200px;
+    margin: 6rem auto 0;
+    padding: 0 2rem;
+
+    @media (min-width: 768px) {
+        margin-top: 8rem;
     }
 `
 
-const AboutHeader = styled.h1`
-    font-size: 3rem;
-    font-weight: 600;
-    margin: 1.5rem 0;
-    position: relative;
-    display: inline-block;
+const Header = styled.div`
+    margin-bottom: 3rem;
 
-    @media (min-width: 769px) {
-        margin-left: 0;
-        margin-bottom: 3rem;
-    }
-    @media (min-width: 1450px) {
-        font-size: 4rem;
+    h1 {
+        font-size: 3rem;
+        font-weight: 600;
+        margin: 0;
+        position: relative;
+        display: inline-block;
     }
 `
 
 const HeaderUnderline = styled.div`
-    position: absolute;
-    bottom: -8px;
-    left: 0;
-    width: 80px;
+    width: 70px;
     height: 3px;
     background-color: #8b7355;
+    margin-top: 0.6rem;
 `
 
-const AboutInfoContainer = styled.div`
-    display: flex;
-    flex-direction: column;
-    justify-content: center;
-    align-items: flex-start;
+const ContentGrid = styled.div`
+    display: grid;
+    grid-template-columns: 1fr;
     gap: 3rem;
 
-    @media (min-width: 769px) {
-        flex-direction: row;
-        align-items: flex-start;
+    @media (min-width: 768px) {
+        grid-template-columns: 1.2fr 0.8fr;
         gap: 4rem;
+        align-items: start;
     }
 `
 
-const AboutTextWrapper = styled.div`
+const TextSection = styled.div`
     display: flex;
     flex-direction: column;
-    flex: 1;
+    gap: 2rem;
 `
 
 const AboutText = styled.p`
     margin: 0;
-    font-weight: 400;
-    line-height: 1.8;
+    font-size: 1.05rem;
+    line-height: 1.65;
     color: #2a2a2a;
-
-    @media (min-width: 769px) {
-        font-size: 1.1rem;
-        font-weight: 400;
-    }
+    max-width: 620px;
 `
 
-const LanguageButtonContainer = styled.div`
+const Actions = styled.div`
+    display: flex;
+    align-items: center;
+    gap: 1.5rem;
+    flex-wrap: wrap;
+`
+
+const LanguageSwitch = styled.div`
     display: flex;
     gap: 0.5rem;
-    margin-top: 2rem;
 `
 
 const SweButton = styled.button`
-    padding: 0.6rem 1.2rem;
+    padding: 0.5rem 1.1rem;
     color: #8b7355;
     background-color: white;
     border: 2px solid #8b7355;
     border-radius: 6px;
     cursor: pointer;
     font-weight: 500;
-    transition: all 0.3s ease;
+    transition: all 0.25s ease;
 
     &:hover {
         background-color: #8b7355;
         color: white;
-        transform: translateY(-2px);
+        transform: translateY(-1px);
         box-shadow: 0 4px 8px rgba(139, 115, 85, 0.3);
     }
 `
 
 const EnButton = styled.button`
-    padding: 0.6rem 1.2rem;
+    padding: 0.5rem 1.1rem;
     color: white;
     background-color: #8b7355;
     border: none;
     border-radius: 6px;
     cursor: pointer;
     font-weight: 500;
-    transition: all 0.3s ease;
+    transition: all 0.25s ease;
 
     &:hover {
         background-color: #6b5335;
-        transform: translateY(-2px);
+        transform: translateY(-1px);
         box-shadow: 0 4px 8px rgba(139, 115, 85, 0.3);
     }
 `
 
-const CvContainer = styled.div`
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    margin-top: 3rem;
-
-    @media (min-width: 769px) {
-        justify-content: flex-start;
-    }
-`
-
 const CvButton = styled.button`
-    width: 10rem;
-    height: 3rem;
+    padding: 0.6rem 1.6rem;
     font-weight: 600;
-    padding: 0.5rem 1rem;
     color: white;
     background-color: #8b7355;
     border: none;
-    border-radius: 6px;
+    border-radius: 8px;
     cursor: pointer;
-    font-size: 1rem;
-    transition: all 0.3s ease;
+    font-size: 0.95rem;
+    transition: all 0.25s ease;
 
     &:hover {
         background-color: #6b5335;
-        transform: translateY(-2px);
-        box-shadow: 0 4px 12px rgba(139, 115, 85, 0.4);
+        transform: translateY(-1px);
+        box-shadow: 0 6px 14px rgba(139, 115, 85, 0.35);
     }
 `
 
 const AboutImage = styled.img`
     width: 100%;
-    box-shadow: 0px 4px 20px rgba(0, 0, 0, 0.2);
-    border-radius: 8px;
-
-    @media (min-width: 769px) {
-        width: 25vw;
-        min-width: 300px;
-        align-self: flex-start;
-    }
+    max-width: 380px;
+    border-radius: 10px;
+    box-shadow: 0 10px 30px rgba(0,0,0,0.18);
 `

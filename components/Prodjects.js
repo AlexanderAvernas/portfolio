@@ -88,8 +88,8 @@ function Prodjects(props) {
                 <p className="LoadingText">Click again to open!</p>
               </div>
             ) : (
-              <a
-                href={props.projectLink}
+              
+             <a   href={props.projectLink}
                 target="_blank"
                 rel="noopener noreferrer"
                 onClick={handleFirstClick}
@@ -100,11 +100,14 @@ function Prodjects(props) {
                   src={props.image}
                   alt={`${props.info} project`}
                 />
+                <div className="ProjectOverlay">
+                  <span className="ViewProjectText">Klicka för att visa</span>
+                </div>
               </a>
             )
           ) : (
-            <a
-              href={props.projectLink}
+            
+           <a   href={props.projectLink}
               target="_blank"
               rel="noopener noreferrer"
               className="ProjectImageLink"
@@ -114,6 +117,9 @@ function Prodjects(props) {
                 src={props.image}
                 alt={`${props.info} project`}
               />
+              <div className="ProjectOverlay">
+                <span className="ViewProjectText">Klicka för att visa</span>
+              </div>
             </a>
           )}
         </div>
