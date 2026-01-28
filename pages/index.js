@@ -65,7 +65,7 @@ export default function Home() {
       description: "",
     },
     {
-      degree: "Idrotsmedicin Magister",
+      degree: "Idrottsmedicin Magister",
       school: "Linnéuniversitetet",
       studyType: "Deltid", // För utbildning
       period: "Aug 2019 - Aug 2020",
