@@ -14,10 +14,10 @@ function HeroVisit() {
             </h1>
             <div className="HeroVisitUnderline"></div>
 
-            <h2 className="HeroVisitTitle">Frontend Developer</h2>
+            <h2 className="HeroVisitTitle">Fysioterapeut & Webbutvecklare</h2>
 
             <p className="HeroVisitDescription">
-              
+              IT och vård – teknisk kompetens med verksamhetsförståelse
             </p>
           </div>
 

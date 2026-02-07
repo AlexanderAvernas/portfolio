@@ -22,15 +22,16 @@ function AboutSw() {
                     </Header> */}
 
           <AboutText>
-            Hej! Jag heter Alexander och arbetat många år inom vården
-            men NU har jag valt att byta bana för att jobba med det jag tycker
-            är riktigt kul!, att skapa, lösa problem och se saker växa fram. Jag
-            är utbildad frontendutvecklare och vill arbeta med design och
-            problemlösning!
+            Hej! Jag heter Alexander och har lång erfarenhet från arbete inom
+            vården, idag kompletterat med utbildning och praktisk erfarenhet
+            inom IT och webbutveckling. Jag är intresserad av hur teknik kan
+            användas i vårdnära sammanhang och trivs i miljöer där förståelse
+            för både verksamhet och digitala lösningar är viktig.
             <br />
             <br />
-            Jag är noggrann, gillar att göra saker ordentligt och sätter
-            stolthet i att lämna ett bra arbete efter mig.
+            Min bakgrund inom vården ger mig god insikt i användarbehov,
+            arbetsflöden och kvalitetskrav, samtidigt som min IT-kompetens gör
+            att jag kan arbeta nära utveckling och andra IT-funktioner.
           </AboutText>
 
           <Actions>
@@ -145,7 +146,7 @@ const HeaderUnderline = styled.div`
 const AboutText = styled.p`
   margin: 0;
   line-height: 1.6;
-  font-size: 1.0rem;
+  font-size: 1rem;
   color: inherit;
   text-shadow: 0 2px 8px rgba(0, 0, 0, 0.45);
 
